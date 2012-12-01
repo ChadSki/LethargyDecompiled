@@ -16,7 +16,7 @@ namespace Lethargy
     {
         private IContainer components;
         [AccessedThroughProperty("tv")]
-        private TreeView _tv;
+        private TreeView _tagTreeView;
         [AccessedThroughProperty("FileToolStripMenuItem0")]
         private ToolStripMenuItem _FileToolStripMenuItem0;
         [AccessedThroughProperty("ToolStripSeparator1")]
@@ -147,26 +147,31 @@ namespace Lethargy
         private Hashtable IDhash;
         private bool userdidit;
         private bool pluginLoaded;
-        internal virtual TreeView tv
+
+        /// <summary>
+        /// The expandable tree of tags. When the tree is replaced
+        /// (new map loaded), we attach the selection event handler.
+        /// </summary>
+        internal virtual TreeView TagTreeView
         {
             get
             {
-                return this._tv;
+                return this._tagTreeView;
             }
 
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 TreeViewEventHandler value2 = new TreeViewEventHandler(this.tv_AfterSelect);
-                if (this._tv != null)
+                if (this._tagTreeView != null)
                 {
-                    this._tv.AfterSelect -= value2;
+                    this._tagTreeView.AfterSelect -= value2;
                 }
 
-                this._tv = value;
-                if (this._tv != null)
+                this._tagTreeView = value;
+                if (this._tagTreeView != null)
                 {
-                    this._tv.AfterSelect += value2;
+                    this._tagTreeView.AfterSelect += value2;
                 }
 
             }
@@ -1230,7 +1235,7 @@ namespace Lethargy
             DataGridViewCellStyle dataGridViewCellStyle = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            this.tv = new TreeView();
+            this.TagTreeView = new TreeView();
             this.FileToolStripMenuItem0 = new ToolStripMenuItem();
             this.ToolStripSeparator1 = new ToolStripSeparator();
             this.ExitToolStripMenuItem = new ToolStripMenuItem();
@@ -1305,15 +1310,15 @@ namespace Lethargy
             ((ISupportInitialize)this.dgv).BeginInit();
             this.MenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            this.tv.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
-            Control arg_36E_0 = this.tv;
+            this.TagTreeView.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
+            Control arg_36E_0 = this.TagTreeView;
             Point location = new Point(3, 25);
             arg_36E_0.Location = location;
-            this.tv.Name = "tv";
-            Control arg_39C_0 = this.tv;
+            this.TagTreeView.Name = "tv";
+            Control arg_39C_0 = this.TagTreeView;
             Size size = new Size(315, 460);
             arg_39C_0.Size = size;
-            this.tv.TabIndex = 0;
+            this.TagTreeView.TabIndex = 0;
             this.FileToolStripMenuItem0.DropDownItems.AddRange(new ToolStripItem[]
             {
                 this.ToolStripSeparator1,
@@ -1724,7 +1729,7 @@ namespace Lethargy
             location = new Point(219, 27);
             arg_176D_0.Location = location;
             this.MapView.Name = "MapView";
-            this.MapView.Panel1.Controls.Add(this.tv);
+            this.MapView.Panel1.Controls.Add(this.TagTreeView);
             this.MapView.Panel1.Controls.Add(this.Label11);
             this.MapView.Panel2.Controls.Add(this.Tabs);
             Control arg_17EC_0 = this.MapView;
@@ -2387,8 +2392,8 @@ namespace Lethargy
 
         private void ReadMAPTags()
         {
-            this.tv.Sorted = true;
-            this.tv.BeginUpdate();
+            this.TagTreeView.Sorted = true;
+            this.TagTreeView.BeginUpdate();
             BinaryReader binaryReader = new BinaryReader(new FileStream(this.MAP.Path, FileMode.Open, FileAccess.Read));
             checked
             {
@@ -2400,7 +2405,7 @@ namespace Lethargy
                 this.txtIndexOffset.Text = Conversions.ToString(this.MAP.IndexOffset);
                 this.txtMetaSize.Text = Conversions.ToString(this.MAP.TotalMetaSize);
                 this.txtTagCount.Text = Conversions.ToString(this.MAP.TagCount);
-                this.tv.Nodes.Clear();
+                this.TagTreeView.Nodes.Clear();
                 this.IDhash.Clear();
                 int num3 = 0;
                 int arg_F1_0 = 0;
@@ -2457,9 +2462,9 @@ namespace Lethargy
                     text = text.Replace("�", "ÿ");
                     text2 = text2.Replace("�", "ÿ");
                     text3 = text3.Replace("�", "ÿ");
-                    if (!this.tv.Nodes.ContainsKey(text))
+                    if (!this.TagTreeView.Nodes.ContainsKey(text))
                     {
-                        this.tv.Nodes.Add(text, "[" + text + "]");
+                        this.TagTreeView.Nodes.Add(text, "[" + text + "]");
                         this.cb1.Items.Add(text);
                         this.cbClass.Items.Add(text);
                     }
@@ -2475,11 +2480,11 @@ namespace Lethargy
                     }
 
                     string key = text + "-" + text5;
-                    this.tv.Nodes[text].Nodes.Add(key, text5);
-                    this.tv.Nodes[text].Nodes[key].Tag = i;
+                    this.TagTreeView.Nodes[text].Nodes.Add(key, text5);
+                    this.TagTreeView.Nodes[text].Nodes[key].Tag = i;
                     if (num8 == 1)
                     {
-                        this.tv.Nodes[text].Nodes[key].ForeColor = Color.Gray;
+                        this.TagTreeView.Nodes[text].Nodes[key].ForeColor = Color.Gray;
                     }
 
                     this.IDhash.Add(num5, i);
@@ -2510,7 +2515,7 @@ namespace Lethargy
                 }
                 this.AddItemsCount();
                 binaryReader.Close();
-                this.tv.EndUpdate();
+                this.TagTreeView.EndUpdate();
             }
 
         }
@@ -2533,11 +2538,11 @@ namespace Lethargy
             int arg_10_0 = 0;
             checked
             {
-                int num = this.tv.GetNodeCount(false) - 1;
+                int num = this.TagTreeView.GetNodeCount(false) - 1;
                 for (int i = arg_10_0; i <= num; i++)
                 {
                     string text;
-                    if (this.tv.Nodes[i].GetNodeCount(false) == 1)
+                    if (this.TagTreeView.Nodes[i].GetNodeCount(false) == 1)
                     {
                         text = " Item)";
                     }
@@ -2549,518 +2554,518 @@ namespace Lethargy
 
                     bool flag = true;
                     string text2;
-                    if (flag == (this.tv.Nodes[i].Name.Equals("actr")))
+                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("actr")))
                     {
                         text2 = "Actor";
                     }
 
                     else
                     {
-                        if (flag == (this.tv.Nodes[i].Name.Equals("actv")))
+                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("actv")))
                         {
                             text2 = "Actor Variant";
                         }
 
                         else
                         {
-                            if (flag == (this.tv.Nodes[i].Name.Equals("bitm")))
+                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("bitm")))
                             {
                                 text2 = "Bitmaps";
                             }
 
                             else
                             {
-                                if (flag == (this.tv.Nodes[i].Name.Equals("bipd")))
+                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("bipd")))
                                 {
                                     text2 = "Biped";
                                 }
 
                                 else
                                 {
-                                    if (flag == (this.tv.Nodes[i].Name.Equals("weap")))
+                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("weap")))
                                     {
                                         text2 = "Weapon";
                                     }
 
                                     else
                                     {
-                                        if (flag == (this.tv.Nodes[i].Name.Equals("vehi")))
+                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("vehi")))
                                         {
                                             text2 = "Vehicle";
                                         }
 
                                         else
                                         {
-                                            if (flag == (this.tv.Nodes[i].Name.Equals("scen")))
+                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("scen")))
                                             {
                                                 text2 = "Scenery";
                                             }
 
                                             else
                                             {
-                                                if (flag == (this.tv.Nodes[i].Name.Equals("scnr")))
+                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("scnr")))
                                                 {
                                                     text2 = "Scenario";
                                                 }
 
                                                 else
                                                 {
-                                                    if (flag == (this.tv.Nodes[i].Name.Equals("sbsp")))
+                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("sbsp")))
                                                     {
                                                         text2 = "Structure BSP";
                                                     }
 
                                                     else
                                                     {
-                                                        if (flag == (this.tv.Nodes[i].Name.Equals("effe")))
+                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("effe")))
                                                         {
                                                             text2 = "Effect";
                                                         }
 
                                                         else
                                                         {
-                                                            if (flag == (this.tv.Nodes[i].Name.Equals("glw!")))
+                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("glw!")))
                                                             {
                                                                 text2 = "Glow";
                                                             }
 
                                                             else
                                                             {
-                                                                if (flag == (this.tv.Nodes[i].Name.Equals("elec")))
+                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("elec")))
                                                                 {
                                                                     text2 = "Lightning";
                                                                 }
 
                                                                 else
                                                                 {
-                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("coll")))
+                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("coll")))
                                                                     {
                                                                         text2 = "Collision Model";
                                                                     }
 
                                                                     else
                                                                     {
-                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("antr")))
+                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("antr")))
                                                                         {
                                                                             text2 = "Animation Trigger";
                                                                         }
 
                                                                         else
                                                                         {
-                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("ant!")))
+                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("ant!")))
                                                                             {
                                                                                 text2 = "Antenna";
                                                                             }
 
                                                                             else
                                                                             {
-                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("colo")))
+                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("colo")))
                                                                                 {
                                                                                     text2 = "Color Table";
                                                                                 }
 
                                                                                 else
                                                                                 {
-                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("cont")))
+                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("cont")))
                                                                                     {
                                                                                         text2 = "Contrail";
                                                                                     }
 
                                                                                     else
                                                                                     {
-                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("deca")))
+                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("deca")))
                                                                                         {
                                                                                             text2 = "Decal";
                                                                                         }
 
                                                                                         else
                                                                                         {
-                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("ant!")))
+                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("ant!")))
                                                                                             {
                                                                                                 text2 = "Antenna";
                                                                                             }
 
                                                                                             else
                                                                                             {
-                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("DeLa")))
+                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("DeLa")))
                                                                                                 {
                                                                                                     text2 = "UI Widget Definition";
                                                                                                 }
 
                                                                                                 else
                                                                                                 {
-                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("eqip")))
+                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("eqip")))
                                                                                                     {
                                                                                                         text2 = "Equipment";
                                                                                                     }
 
                                                                                                     else
                                                                                                     {
-                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("foot")))
+                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("foot")))
                                                                                                         {
                                                                                                             text2 = "Material Effect";
                                                                                                         }
 
                                                                                                         else
                                                                                                         {
-                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("flag")))
+                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("flag")))
                                                                                                             {
                                                                                                                 text2 = "Flag";
                                                                                                             }
 
                                                                                                             else
                                                                                                             {
-                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("font")))
+                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("font")))
                                                                                                                 {
                                                                                                                     text2 = "Font";
                                                                                                                 }
 
                                                                                                                 else
                                                                                                                 {
-                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("grhi")))
+                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("grhi")))
                                                                                                                     {
                                                                                                                         text2 = "Grenade HUD Inteface";
                                                                                                                     }
 
                                                                                                                     else
                                                                                                                     {
-                                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("wphi")))
+                                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("wphi")))
                                                                                                                         {
                                                                                                                             text2 = "Weapon HUD Inteface";
                                                                                                                         }
 
                                                                                                                         else
                                                                                                                         {
-                                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("hmt ")))
+                                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("hmt ")))
                                                                                                                             {
                                                                                                                                 text2 = "HUD Message Text";
                                                                                                                             }
 
                                                                                                                             else
                                                                                                                             {
-                                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("fog ")))
+                                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("fog ")))
                                                                                                                                 {
                                                                                                                                     text2 = "Fog";
                                                                                                                                 }
 
                                                                                                                                 else
                                                                                                                                 {
-                                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("hud#")))
+                                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("hud#")))
                                                                                                                                     {
                                                                                                                                         text2 = "HUD Number";
                                                                                                                                     }
 
                                                                                                                                     else
                                                                                                                                     {
-                                                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("hudg")))
+                                                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("hudg")))
                                                                                                                                         {
                                                                                                                                             text2 = "HUD Globals";
                                                                                                                                         }
 
                                                                                                                                         else
                                                                                                                                         {
-                                                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("itmc")))
+                                                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("itmc")))
                                                                                                                                             {
                                                                                                                                                 text2 = "Item Collection";
                                                                                                                                             }
 
                                                                                                                                             else
                                                                                                                                             {
-                                                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("lens")))
+                                                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("lens")))
                                                                                                                                                 {
                                                                                                                                                     text2 = "Lens Flare";
                                                                                                                                                 }
 
                                                                                                                                                 else
                                                                                                                                                 {
-                                                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("soso")))
+                                                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("soso")))
                                                                                                                                                     {
                                                                                                                                                         text2 = "Shader Model";
                                                                                                                                                     }
 
                                                                                                                                                     else
                                                                                                                                                     {
-                                                                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("scex")))
+                                                                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("scex")))
                                                                                                                                                         {
                                                                                                                                                             text2 = "Shader Transparent Chicago Extended";
                                                                                                                                                         }
 
                                                                                                                                                         else
                                                                                                                                                         {
-                                                                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("schi")))
+                                                                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("schi")))
                                                                                                                                                             {
                                                                                                                                                                 text2 = "Shader Transparent Chicago";
                                                                                                                                                             }
 
                                                                                                                                                             else
                                                                                                                                                             {
-                                                                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("sky ")))
+                                                                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("sky ")))
                                                                                                                                                                 {
                                                                                                                                                                     text2 = "Sky";
                                                                                                                                                                 }
 
                                                                                                                                                                 else
                                                                                                                                                                 {
-                                                                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("Soul")))
+                                                                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("Soul")))
                                                                                                                                                                     {
                                                                                                                                                                         text2 = "UI Widget Collection";
                                                                                                                                                                     }
 
                                                                                                                                                                     else
                                                                                                                                                                     {
-                                                                                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("trak")))
+                                                                                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("trak")))
                                                                                                                                                                         {
                                                                                                                                                                             text2 = "Track";
                                                                                                                                                                         }
 
                                                                                                                                                                         else
                                                                                                                                                                         {
-                                                                                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("swat")))
+                                                                                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("swat")))
                                                                                                                                                                             {
                                                                                                                                                                                 text2 = "Shader Water";
                                                                                                                                                                             }
 
                                                                                                                                                                             else
                                                                                                                                                                             {
-                                                                                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("spla")))
+                                                                                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("spla")))
                                                                                                                                                                                 {
                                                                                                                                                                                     text2 = "Shader Plasma";
                                                                                                                                                                                 }
 
                                                                                                                                                                                 else
                                                                                                                                                                                 {
-                                                                                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("udlg")))
+                                                                                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("udlg")))
                                                                                                                                                                                     {
                                                                                                                                                                                         text2 = "Unit Dialog";
                                                                                                                                                                                     }
 
                                                                                                                                                                                     else
                                                                                                                                                                                     {
-                                                                                                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("wind")))
+                                                                                                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("wind")))
                                                                                                                                                                                         {
                                                                                                                                                                                             text2 = "Wind";
                                                                                                                                                                                         }
 
                                                                                                                                                                                         else
                                                                                                                                                                                         {
-                                                                                                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("ustr")))
+                                                                                                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("ustr")))
                                                                                                                                                                                             {
                                                                                                                                                                                                 text2 = "Unicode String List";
                                                                                                                                                                                             }
 
                                                                                                                                                                                             else
                                                                                                                                                                                             {
-                                                                                                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("str#")))
+                                                                                                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("str#")))
                                                                                                                                                                                                 {
                                                                                                                                                                                                     text2 = "String List";
                                                                                                                                                                                                 }
 
                                                                                                                                                                                                 else
                                                                                                                                                                                                 {
-                                                                                                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("ssce")))
+                                                                                                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("ssce")))
                                                                                                                                                                                                     {
                                                                                                                                                                                                         text2 = "Sound Scenery";
                                                                                                                                                                                                     }
 
                                                                                                                                                                                                     else
                                                                                                                                                                                                     {
-                                                                                                                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("smet")))
+                                                                                                                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("smet")))
                                                                                                                                                                                                         {
                                                                                                                                                                                                             text2 = "Shader Meter";
                                                                                                                                                                                                         }
 
                                                                                                                                                                                                         else
                                                                                                                                                                                                         {
-                                                                                                                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("mod2")))
+                                                                                                                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("mod2")))
                                                                                                                                                                                                             {
                                                                                                                                                                                                                 text2 = "Model";
                                                                                                                                                                                                             }
 
                                                                                                                                                                                                             else
                                                                                                                                                                                                             {
-                                                                                                                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("snd!")))
+                                                                                                                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("snd!")))
                                                                                                                                                                                                                 {
                                                                                                                                                                                                                     text2 = "Sound";
                                                                                                                                                                                                                 }
 
                                                                                                                                                                                                                 else
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("lsnd")))
+                                                                                                                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("lsnd")))
                                                                                                                                                                                                                     {
                                                                                                                                                                                                                         text2 = "Sound Looping";
                                                                                                                                                                                                                     }
 
                                                                                                                                                                                                                     else
                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("tagc")))
+                                                                                                                                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("tagc")))
                                                                                                                                                                                                                         {
                                                                                                                                                                                                                             text2 = "Tag Collection";
                                                                                                                                                                                                                         }
 
                                                                                                                                                                                                                         else
                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("snde")))
+                                                                                                                                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("snde")))
                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                 text2 = "Sound Enviroment";
                                                                                                                                                                                                                             }
 
                                                                                                                                                                                                                             else
                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("senv")))
+                                                                                                                                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("senv")))
                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                     text2 = "Shader Enviroment";
                                                                                                                                                                                                                                 }
 
                                                                                                                                                                                                                                 else
                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("proj")))
+                                                                                                                                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("proj")))
                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                         text2 = "Projectile";
                                                                                                                                                                                                                                     }
 
                                                                                                                                                                                                                                     else
                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("phys")))
+                                                                                                                                                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("phys")))
                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                             text2 = "Physics";
                                                                                                                                                                                                                                         }
 
                                                                                                                                                                                                                                         else
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("pphy")))
+                                                                                                                                                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("pphy")))
                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                 text2 = "Point Physics";
                                                                                                                                                                                                                                             }
 
                                                                                                                                                                                                                                             else
                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("pctl")))
+                                                                                                                                                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("pctl")))
                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                     text2 = "Particle System";
                                                                                                                                                                                                                                                 }
 
                                                                                                                                                                                                                                                 else
                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("sgla")))
+                                                                                                                                                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("sgla")))
                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                         text2 = "Shader Transparent Glass";
                                                                                                                                                                                                                                                     }
 
                                                                                                                                                                                                                                                     else
                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("mgs2")))
+                                                                                                                                                                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("mgs2")))
                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                             text2 = "Light Volume";
                                                                                                                                                                                                                                                         }
 
                                                                                                                                                                                                                                                         else
                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("matg")))
+                                                                                                                                                                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("matg")))
                                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                                 text2 = "Game Globals";
                                                                                                                                                                                                                                                             }
 
                                                                                                                                                                                                                                                             else
                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("unhi")))
+                                                                                                                                                                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("unhi")))
                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                     text2 = "Unit HUD Interface";
                                                                                                                                                                                                                                                                 }
 
                                                                                                                                                                                                                                                                 else
                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("devc")))
+                                                                                                                                                                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("devc")))
                                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                                         text2 = "Device";
                                                                                                                                                                                                                                                                     }
 
                                                                                                                                                                                                                                                                     else
                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("metr")))
+                                                                                                                                                                                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("metr")))
                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                             text2 = "Meter";
                                                                                                                                                                                                                                                                         }
 
                                                                                                                                                                                                                                                                         else
                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("part")))
+                                                                                                                                                                                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("part")))
                                                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                                                 text2 = "Particle";
                                                                                                                                                                                                                                                                             }
 
                                                                                                                                                                                                                                                                             else
                                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("jpt!")))
+                                                                                                                                                                                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("jpt!")))
                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                     text2 = "Damage";
                                                                                                                                                                                                                                                                                 }
 
                                                                                                                                                                                                                                                                                 else
                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("rain")))
+                                                                                                                                                                                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("rain")))
                                                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                                                         text2 = "Rain";
                                                                                                                                                                                                                                                                                     }
 
                                                                                                                                                                                                                                                                                     else
                                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("lifi")))
+                                                                                                                                                                                                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("lifi")))
                                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                                             text2 = "Light Fixture";
                                                                                                                                                                                                                                                                                         }
 
                                                                                                                                                                                                                                                                                         else
                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("mach")))
+                                                                                                                                                                                                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("mach")))
                                                                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                                                                 text2 = "Machine";
                                                                                                                                                                                                                                                                                             }
 
                                                                                                                                                                                                                                                                                             else
                                                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("dobc")))
+                                                                                                                                                                                                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("dobc")))
                                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                                     text2 = "Detail Object Collection";
                                                                                                                                                                                                                                                                                                 }
 
                                                                                                                                                                                                                                                                                                 else
                                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("ligh")))
+                                                                                                                                                                                                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("ligh")))
                                                                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                                                                         text2 = "Light";
                                                                                                                                                                                                                                                                                                     }
 
                                                                                                                                                                                                                                                                                                     else
                                                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                                                        if (flag == (this.tv.Nodes[i].Name.Equals("ctrl")))
+                                                                                                                                                                                                                                                                                                        if (flag == (this.TagTreeView.Nodes[i].Name.Equals("ctrl")))
                                                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                                                             text2 = "Control";
                                                                                                                                                                                                                                                                                                         }
 
                                                                                                                                                                                                                                                                                                         else
                                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                                            if (flag == (this.tv.Nodes[i].Name.Equals("garb")))
+                                                                                                                                                                                                                                                                                                            if (flag == (this.TagTreeView.Nodes[i].Name.Equals("garb")))
                                                                                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                                                                                 text2 = "Garbage";
                                                                                                                                                                                                                                                                                                             }
 
                                                                                                                                                                                                                                                                                                             else
                                                                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                                                                if (flag == (this.tv.Nodes[i].Name.Equals("vcky")))
+                                                                                                                                                                                                                                                                                                                if (flag == (this.TagTreeView.Nodes[i].Name.Equals("vcky")))
                                                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                                                     text2 = "Virtual Keyboard";
                                                                                                                                                                                                                                                                                                                 }
 
                                                                                                                                                                                                                                                                                                                 else
                                                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                                                    if (flag == (this.tv.Nodes[i].Name.Equals("mply")))
+                                                                                                                                                                                                                                                                                                                    if (flag == (this.TagTreeView.Nodes[i].Name.Equals("mply")))
                                                                                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                                                                                         text2 = "Multiplayer Scenarios";
                                                                                                                                                                                                                                                                                                                     }
 
                                                                                                                                                                                                                                                                                                                     else
                                                                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                                                                        text2 = this.tv.Nodes[i].Name.ToUpper() + " Tag (Unknown)";
+                                                                                                                                                                                                                                                                                                                        text2 = this.TagTreeView.Nodes[i].Name.ToUpper() + " Tag (Unknown)";
                                                                                                                                                                                                                                                                                                                     }
 
                                                                                                                                                                                                                                                                                                                 }
@@ -3171,13 +3176,13 @@ namespace Lethargy
                         }
                     }
 
-                    this.tv.Nodes[i].Text = string.Concat(new string[]
+                    this.TagTreeView.Nodes[i].Text = string.Concat(new string[]
                     {
-                        this.tv.Nodes[i].Text,
+                        this.TagTreeView.Nodes[i].Text,
                         " ",
                         text2,
                         " (",
-                        Conversions.ToString(this.tv.Nodes[i].GetNodeCount(false)),
+                        Conversions.ToString(this.TagTreeView.Nodes[i].GetNodeCount(false)),
                         text
                     });
                 }
@@ -3202,9 +3207,9 @@ namespace Lethargy
             });
             this.Status.Text = "Loading Map '" + this.MAP.Name + "'...";
             this.Refresh();
-            this.tv.Cursor = Cursors.WaitCursor;
+            this.TagTreeView.Cursor = Cursors.WaitCursor;
             this.ReadMAPTags();
-            this.tv.Cursor = Cursors.Default;
+            this.TagTreeView.Cursor = Cursors.Default;
             this.Status.Text = this.MAP.Name + " loaded, " + Conversions.ToString(this.MAP.TagCount) + " tags processed.";
             this.FindTagByIndexOrderToolStripMenuItem.Enabled = true;
             this.ShowTagsOrderToolStripMenuItem.Enabled = true;
@@ -3218,12 +3223,12 @@ namespace Lethargy
 
         private void tv_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if (Operators.ConditionalCompareObjectEqual(this.IsClass(this.tv.SelectedNode.Name), true, false))
+            if (Operators.ConditionalCompareObjectEqual(this.IsClass(this.TagTreeView.SelectedNode.Name), true, false))
             {
                 return;
             }
 
-            if (this.tv.SelectedNode.ForeColor == Color.Gray)
+            if (this.TagTreeView.SelectedNode.ForeColor == Color.Gray)
             {
                 Interaction.MsgBox("Cannot edit indexed CE tags.", MsgBoxStyle.OkOnly, null);
                 return;
@@ -3231,7 +3236,7 @@ namespace Lethargy
 
             this.btnExtract.Enabled = true;
             this.btnSave.Enabled = true;
-            HaloTag haloTag = this.TagsCache[Convert.ToInt32(this.tv.SelectedNode.Tag)];
+            HaloTag haloTag = this.TagsCache[Convert.ToInt32(this.TagTreeView.SelectedNode.Tag)];
             this.txtID.Text = Conversions.ToString(haloTag.ID);
             this.txtMetaOffset.Text = Conversion.Hex(haloTag.MetaOffset);
             this.txtTagMetaSize.Text = Conversions.ToString(haloTag.MetaSize);
@@ -3373,12 +3378,12 @@ namespace Lethargy
         {
             try
             {
-                if (Operators.ConditionalCompareObjectEqual(this.IsClass(this.tv.SelectedNode.Name), true, false))
+                if (Operators.ConditionalCompareObjectEqual(this.IsClass(this.TagTreeView.SelectedNode.Name), true, false))
                 {
                     return;
                 }
 
-                if (this.tv.SelectedNode.ForeColor == Color.Gray)
+                if (this.TagTreeView.SelectedNode.ForeColor == Color.Gray)
                 {
                     //Interaction.MsgBox("Cannot extract indexed CE tags.", MsgBoxStyle.OkOnly, null);
                     return;
@@ -3392,7 +3397,7 @@ namespace Lethargy
                 return;
             }
 
-            HaloTag haloTag = this.TagsCache[Convert.ToInt32(this.tv.SelectedNode.Tag)];
+            HaloTag haloTag = this.TagsCache[Convert.ToInt32(this.TagTreeView.SelectedNode.Tag)];
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = string.Concat(new string[]
             {
@@ -4093,7 +4098,7 @@ namespace Lethargy
         public void WriteTag()
         {
             BinaryWriter binaryWriter = new BinaryWriter(new FileStream(this.MAP.Path, FileMode.Open, FileAccess.Write));
-            int num = Convert.ToInt32(this.tv.SelectedNode.Tag);
+            int num = Convert.ToInt32(this.TagTreeView.SelectedNode.Tag);
             HaloTag haloTag = this.TagsCache[num];
             int metaOffset = haloTag.MetaOffset;
             int arg_58_0 = 0;
@@ -4513,10 +4518,10 @@ namespace Lethargy
             int arg_2F_0 = 0;
             checked
             {
-                int num = this.tv.Nodes[class1].Nodes.Count - 1;
+                int num = this.TagTreeView.Nodes[class1].Nodes.Count - 1;
                 for (int i = arg_2F_0; i <= num; i++)
                 {
-                    this.cbName.Items.Add(this.tv.Nodes[class1].Nodes[i].Text);
+                    this.cbName.Items.Add(this.TagTreeView.Nodes[class1].Nodes[i].Text);
                 }
 
                 if (dep)
@@ -4596,7 +4601,7 @@ namespace Lethargy
                 }
                 else
                 {
-                    HaloTag haloTag = this.TagsCache[Convert.ToInt32(this.tv.Nodes[this.cbClass.SelectedItem.ToString()].Nodes[this.cbClass.SelectedItem.ToString() + "-" + this.cbName.SelectedItem.ToString()].Tag)];
+                    HaloTag haloTag = this.TagsCache[Convert.ToInt32(this.TagTreeView.Nodes[this.cbClass.SelectedItem.ToString()].Nodes[this.cbClass.SelectedItem.ToString() + "-" + this.cbName.SelectedItem.ToString()].Tag)];
                     int arg_16F_0 = 0;
                     int num3 = this.dgv.SelectedRows.Count - 1;
                     for (int j = arg_16F_0; j <= num3; j++)
@@ -4618,12 +4623,12 @@ namespace Lethargy
         {
             try
             {
-                this.tv.CollapseAll();
+                this.TagTreeView.CollapseAll();
                 DataGridViewRow dataGridViewRow = this.dgv.Rows[e.RowIndex];
                 string text = Conversions.ToString(dataGridViewRow.Cells[0].Value);
                 string str = Conversions.ToString(dataGridViewRow.Cells[1].Value);
-                this.tv.Nodes[text].Expand();
-                this.tv.SelectedNode = this.tv.Nodes[text].Nodes[text + "-" + str];
+                this.TagTreeView.Nodes[text].Expand();
+                this.TagTreeView.SelectedNode = this.TagTreeView.Nodes[text].Nodes[text + "-" + str];
             }
 
             catch (Exception expr_9A)
@@ -4636,7 +4641,7 @@ namespace Lethargy
         private void CloseMap()
         {
             this.clearBoxes();
-            this.tv.Nodes.Clear();
+            this.TagTreeView.Nodes.Clear();
             this.dgv.Rows.Clear();
             this.MetaTab.Controls.Clear();
             this.cbClass.Items.Clear();
@@ -4887,7 +4892,7 @@ namespace Lethargy
                     HaloTag haloTag = this.TagsCache[i];
                     if ((double)haloTag.LoadOrder == Conversions.ToDouble(text))
                     {
-                        this.tv.SelectedNode = this.tv.Nodes[haloTag.Class1].Nodes[haloTag.Class1 + "-" + haloTag.Name];
+                        this.TagTreeView.SelectedNode = this.TagTreeView.Nodes[haloTag.Class1].Nodes[haloTag.Class1 + "-" + haloTag.Name];
                     }
 
                 }
@@ -4940,7 +4945,7 @@ namespace Lethargy
             ListBox listBox = (ListBox)sender;
             int selectedIndex = listBox.SelectedIndex;
             HaloTag haloTag = this.TagsCache[selectedIndex];
-            this.tv.SelectedNode = this.tv.Nodes[haloTag.Class1].Nodes[haloTag.Class1 + "-" + haloTag.Name];
+            this.TagTreeView.SelectedNode = this.TagTreeView.Nodes[haloTag.Class1].Nodes[haloTag.Class1 + "-" + haloTag.Name];
         }
 
         private void dgv_SelectionChanged(object sender, EventArgs e)
