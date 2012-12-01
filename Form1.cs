@@ -153,6 +153,7 @@ namespace Lethargy
             {
                 return this._tv;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -161,24 +162,29 @@ namespace Lethargy
                 {
                     this._tv.AfterSelect -= value2;
                 }
+
                 this._tv = value;
                 if (this._tv != null)
                 {
                     this._tv.AfterSelect += value2;
                 }
+
             }
         }
+
         internal virtual ToolStripMenuItem FileToolStripMenuItem0
         {
             get
             {
                 return this._FileToolStripMenuItem0;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._FileToolStripMenuItem0 = value;
             }
+
         }
         internal virtual ToolStripSeparator ToolStripSeparator1
         {
@@ -186,11 +192,13 @@ namespace Lethargy
             {
                 return this._ToolStripSeparator1;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._ToolStripSeparator1 = value;
             }
+
         }
         internal virtual ToolStripMenuItem ExitToolStripMenuItem
         {
@@ -198,6 +206,7 @@ namespace Lethargy
             {
                 return this._ExitToolStripMenuItem;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -206,24 +215,29 @@ namespace Lethargy
                 {
                     this._ExitToolStripMenuItem.Click -= value2;
                 }
+
                 this._ExitToolStripMenuItem = value;
                 if (this._ExitToolStripMenuItem != null)
                 {
                     this._ExitToolStripMenuItem.Click += value2;
                 }
+
             }
         }
+
         internal virtual GroupBox GroupBox2
         {
             get
             {
                 return this._GroupBox2;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._GroupBox2 = value;
             }
+
         }
         internal virtual Label Label10
         {
@@ -231,11 +245,13 @@ namespace Lethargy
             {
                 return this._Label10;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Label10 = value;
             }
+
         }
         internal virtual Label Label9
         {
@@ -243,11 +259,13 @@ namespace Lethargy
             {
                 return this._Label9;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Label9 = value;
             }
+
         }
         internal virtual TextBox txtIndexOrder
         {
@@ -255,11 +273,13 @@ namespace Lethargy
             {
                 return this._txtIndexOrder;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._txtIndexOrder = value;
             }
+
         }
         internal virtual TextBox txtTagMetaSize
         {
@@ -267,11 +287,13 @@ namespace Lethargy
             {
                 return this._txtTagMetaSize;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._txtTagMetaSize = value;
             }
+
         }
         internal virtual Label Label8
         {
@@ -279,11 +301,13 @@ namespace Lethargy
             {
                 return this._Label8;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Label8 = value;
             }
+
         }
         internal virtual Label Label7
         {
@@ -291,11 +315,13 @@ namespace Lethargy
             {
                 return this._Label7;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Label7 = value;
             }
+
         }
         internal virtual Label Label6
         {
@@ -303,11 +329,13 @@ namespace Lethargy
             {
                 return this._Label6;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Label6 = value;
             }
+
         }
         internal virtual Label Label5
         {
@@ -315,11 +343,13 @@ namespace Lethargy
             {
                 return this._Label5;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Label5 = value;
             }
+
         }
         internal virtual TextBox txtTagName
         {
@@ -327,11 +357,13 @@ namespace Lethargy
             {
                 return this._txtTagName;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._txtTagName = value;
             }
+
         }
         internal virtual ComboBox cb3
         {
@@ -339,11 +371,13 @@ namespace Lethargy
             {
                 return this._cb3;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._cb3 = value;
             }
+
         }
         internal virtual ComboBox cb2
         {
@@ -351,11 +385,13 @@ namespace Lethargy
             {
                 return this._cb2;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._cb2 = value;
             }
+
         }
         internal virtual ComboBox cb1
         {
@@ -363,11 +399,13 @@ namespace Lethargy
             {
                 return this._cb1;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._cb1 = value;
             }
+
         }
         internal virtual TextBox txtMetaOffset
         {
@@ -375,11 +413,13 @@ namespace Lethargy
             {
                 return this._txtMetaOffset;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._txtMetaOffset = value;
             }
+
         }
         internal virtual TextBox txtNameOffset
         {
@@ -387,11 +427,13 @@ namespace Lethargy
             {
                 return this._txtNameOffset;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._txtNameOffset = value;
             }
+
         }
         internal virtual TextBox txtOffset
         {
@@ -399,11 +441,13 @@ namespace Lethargy
             {
                 return this._txtOffset;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._txtOffset = value;
             }
+
         }
         internal virtual TextBox txtID
         {
@@ -411,11 +455,13 @@ namespace Lethargy
             {
                 return this._txtID;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._txtID = value;
             }
+
         }
         internal virtual GroupBox GroupBox1
         {
@@ -423,11 +469,13 @@ namespace Lethargy
             {
                 return this._GroupBox1;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._GroupBox1 = value;
             }
+
         }
         internal virtual Label Label4
         {
@@ -435,11 +483,13 @@ namespace Lethargy
             {
                 return this._Label4;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Label4 = value;
             }
+
         }
         internal virtual Label Label3
         {
@@ -447,11 +497,13 @@ namespace Lethargy
             {
                 return this._Label3;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Label3 = value;
             }
+
         }
         internal virtual TextBox txtMetaSize
         {
@@ -459,11 +511,13 @@ namespace Lethargy
             {
                 return this._txtMetaSize;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._txtMetaSize = value;
             }
+
         }
         internal virtual TextBox txtIndexOffset
         {
@@ -471,11 +525,13 @@ namespace Lethargy
             {
                 return this._txtIndexOffset;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._txtIndexOffset = value;
             }
+
         }
         internal virtual TextBox txtTagCount
         {
@@ -483,11 +539,13 @@ namespace Lethargy
             {
                 return this._txtTagCount;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._txtTagCount = value;
             }
+
         }
         internal virtual Label Label2
         {
@@ -495,11 +553,13 @@ namespace Lethargy
             {
                 return this._Label2;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Label2 = value;
             }
+
         }
         internal virtual Label Label1
         {
@@ -507,11 +567,13 @@ namespace Lethargy
             {
                 return this._Label1;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Label1 = value;
             }
+
         }
         internal virtual TextBox txtMagic
         {
@@ -519,11 +581,13 @@ namespace Lethargy
             {
                 return this._txtMagic;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._txtMagic = value;
             }
+
         }
         internal virtual GroupBox GroupBox3
         {
@@ -531,11 +595,13 @@ namespace Lethargy
             {
                 return this._GroupBox3;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._GroupBox3 = value;
             }
+
         }
         internal virtual Label Label11
         {
@@ -543,11 +609,13 @@ namespace Lethargy
             {
                 return this._Label11;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Label11 = value;
             }
+
         }
         internal virtual StatusStrip StatusStrip1
         {
@@ -555,11 +623,13 @@ namespace Lethargy
             {
                 return this._StatusStrip1;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._StatusStrip1 = value;
             }
+
         }
         internal virtual ToolStripStatusLabel StatusOld
         {
@@ -567,11 +637,13 @@ namespace Lethargy
             {
                 return this._StatusOld;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._StatusOld = value;
             }
+
         }
         internal virtual Button btnExtract
         {
@@ -579,6 +651,7 @@ namespace Lethargy
             {
                 return this._btnExtract;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -587,24 +660,29 @@ namespace Lethargy
                 {
                     this._btnExtract.Click -= value2;
                 }
+
                 this._btnExtract = value;
                 if (this._btnExtract != null)
                 {
                     this._btnExtract.Click += value2;
                 }
+
             }
         }
+
         internal virtual SplitContainer MapView
         {
             get
             {
                 return this._MapView;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._MapView = value;
             }
+
         }
         internal virtual TabControl Tabs
         {
@@ -612,11 +690,13 @@ namespace Lethargy
             {
                 return this._Tabs;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Tabs = value;
             }
+
         }
         internal virtual TabPage MetaTab
         {
@@ -624,11 +704,13 @@ namespace Lethargy
             {
                 return this._MetaTab;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._MetaTab = value;
             }
+
         }
         internal virtual TabPage DepsTab
         {
@@ -636,11 +718,13 @@ namespace Lethargy
             {
                 return this._DepsTab;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._DepsTab = value;
             }
+
         }
         internal virtual DataGridView dgv
         {
@@ -648,6 +732,7 @@ namespace Lethargy
             {
                 return this._dgv;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -660,6 +745,7 @@ namespace Lethargy
                     this._dgv.CellDoubleClick -= value3;
                     this._dgv.SelectionChanged -= value4;
                 }
+
                 this._dgv = value;
                 if (this._dgv != null)
                 {
@@ -667,19 +753,23 @@ namespace Lethargy
                     this._dgv.CellDoubleClick += value3;
                     this._dgv.SelectionChanged += value4;
                 }
+
             }
         }
+
         internal virtual DataGridViewTextBoxColumn DepClass
         {
             get
             {
                 return this._DepClass;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._DepClass = value;
             }
+
         }
         internal virtual DataGridViewTextBoxColumn DepName
         {
@@ -687,11 +777,13 @@ namespace Lethargy
             {
                 return this._DepName;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._DepName = value;
             }
+
         }
         internal virtual DataGridViewTextBoxColumn DepType
         {
@@ -699,11 +791,13 @@ namespace Lethargy
             {
                 return this._DepType;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._DepType = value;
             }
+
         }
         internal virtual Button btnSave
         {
@@ -711,6 +805,7 @@ namespace Lethargy
             {
                 return this._btnSave;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -719,24 +814,29 @@ namespace Lethargy
                 {
                     this._btnSave.Click -= value2;
                 }
+
                 this._btnSave = value;
                 if (this._btnSave != null)
                 {
                     this._btnSave.Click += value2;
                 }
+
             }
         }
+
         internal virtual ToolStripMenuItem HelpToolStripMenuItem
         {
             get
             {
                 return this._HelpToolStripMenuItem;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._HelpToolStripMenuItem = value;
             }
+
         }
         internal virtual ToolStripMenuItem AboutToolStripMenuItem
         {
@@ -744,11 +844,13 @@ namespace Lethargy
             {
                 return this._AboutToolStripMenuItem;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._AboutToolStripMenuItem = value;
             }
+
         }
         internal virtual MenuStrip MenuStrip1
         {
@@ -756,11 +858,13 @@ namespace Lethargy
             {
                 return this._MenuStrip1;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._MenuStrip1 = value;
             }
+
         }
         internal virtual ToolStripMenuItem FileToolStripMenuItem1
         {
@@ -768,11 +872,13 @@ namespace Lethargy
             {
                 return this._FileToolStripMenuItem1;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._FileToolStripMenuItem1 = value;
             }
+
         }
         internal virtual ToolStripMenuItem OpenMapToolStripMenuItem
         {
@@ -780,6 +886,7 @@ namespace Lethargy
             {
                 return this._OpenMapToolStripMenuItem;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -788,24 +895,29 @@ namespace Lethargy
                 {
                     this._OpenMapToolStripMenuItem.Click -= value2;
                 }
+
                 this._OpenMapToolStripMenuItem = value;
                 if (this._OpenMapToolStripMenuItem != null)
                 {
                     this._OpenMapToolStripMenuItem.Click += value2;
                 }
+
             }
         }
+
         internal virtual ToolStripStatusLabel Status
         {
             get
             {
                 return this._Status;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._Status = value;
             }
+
         }
         internal virtual ToolStripMenuItem ExitToolStripMenuItem1
         {
@@ -813,6 +925,7 @@ namespace Lethargy
             {
                 return this._ExitToolStripMenuItem1;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -821,24 +934,29 @@ namespace Lethargy
                 {
                     this._ExitToolStripMenuItem1.Click -= value2;
                 }
+
                 this._ExitToolStripMenuItem1 = value;
                 if (this._ExitToolStripMenuItem1 != null)
                 {
                     this._ExitToolStripMenuItem1.Click += value2;
                 }
+
             }
         }
+
         internal virtual ToolStripMenuItem HelpToolStripMenuItem1
         {
             get
             {
                 return this._HelpToolStripMenuItem1;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._HelpToolStripMenuItem1 = value;
             }
+
         }
         internal virtual ToolStripMenuItem AboutToolStripMenuItem1
         {
@@ -846,6 +964,7 @@ namespace Lethargy
             {
                 return this._AboutToolStripMenuItem1;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -854,24 +973,29 @@ namespace Lethargy
                 {
                     this._AboutToolStripMenuItem1.Click -= value2;
                 }
+
                 this._AboutToolStripMenuItem1 = value;
                 if (this._AboutToolStripMenuItem1 != null)
                 {
                     this._AboutToolStripMenuItem1.Click += value2;
                 }
+
             }
         }
+
         internal virtual ComboBox cbName
         {
             get
             {
                 return this._cbName;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._cbName = value;
             }
+
         }
         internal virtual ComboBox cbClass
         {
@@ -879,6 +1003,7 @@ namespace Lethargy
             {
                 return this._cbClass;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -887,19 +1012,23 @@ namespace Lethargy
                 {
                     this._cbClass.SelectedIndexChanged -= value2;
                 }
+
                 this._cbClass = value;
                 if (this._cbClass != null)
                 {
                     this._cbClass.SelectedIndexChanged += value2;
                 }
+
             }
         }
+
         internal virtual Button btnSwap
         {
             get
             {
                 return this._btnSwap;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -908,24 +1037,29 @@ namespace Lethargy
                 {
                     this._btnSwap.Click -= value2;
                 }
+
                 this._btnSwap = value;
                 if (this._btnSwap != null)
                 {
                     this._btnSwap.Click += value2;
                 }
+
             }
         }
+
         internal virtual ToolStripSeparator ToolStripSeparator2
         {
             get
             {
                 return this._ToolStripSeparator2;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._ToolStripSeparator2 = value;
             }
+
         }
         internal virtual ToolStripMenuItem CloseMapToolStripMenuItem
         {
@@ -933,6 +1067,7 @@ namespace Lethargy
             {
                 return this._CloseMapToolStripMenuItem;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -941,24 +1076,29 @@ namespace Lethargy
                 {
                     this._CloseMapToolStripMenuItem.Click -= value2;
                 }
+
                 this._CloseMapToolStripMenuItem = value;
                 if (this._CloseMapToolStripMenuItem != null)
                 {
                     this._CloseMapToolStripMenuItem.Click += value2;
                 }
+
             }
         }
+
         internal virtual ToolStripMenuItem ToolsToolStripMenuItem
         {
             get
             {
                 return this._ToolsToolStripMenuItem;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 this._ToolsToolStripMenuItem = value;
             }
+
         }
         internal virtual ToolStripMenuItem InsertToolStripMenuItem
         {
@@ -966,6 +1106,7 @@ namespace Lethargy
             {
                 return this._InsertToolStripMenuItem;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -974,19 +1115,23 @@ namespace Lethargy
                 {
                     this._InsertToolStripMenuItem.Click -= value2;
                 }
+
                 this._InsertToolStripMenuItem = value;
                 if (this._InsertToolStripMenuItem != null)
                 {
                     this._InsertToolStripMenuItem.Click += value2;
                 }
+
             }
         }
+
         internal virtual ToolStripMenuItem FindTagByIndexOrderToolStripMenuItem
         {
             get
             {
                 return this._FindTagByIndexOrderToolStripMenuItem;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -995,19 +1140,23 @@ namespace Lethargy
                 {
                     this._FindTagByIndexOrderToolStripMenuItem.Click -= value2;
                 }
+
                 this._FindTagByIndexOrderToolStripMenuItem = value;
                 if (this._FindTagByIndexOrderToolStripMenuItem != null)
                 {
                     this._FindTagByIndexOrderToolStripMenuItem.Click += value2;
                 }
+
             }
         }
+
         internal virtual ToolStripMenuItem ShowTagsOrderToolStripMenuItem
         {
             get
             {
                 return this._ShowTagsOrderToolStripMenuItem;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -1016,19 +1165,23 @@ namespace Lethargy
                 {
                     this._ShowTagsOrderToolStripMenuItem.Click -= value2;
                 }
+
                 this._ShowTagsOrderToolStripMenuItem = value;
                 if (this._ShowTagsOrderToolStripMenuItem != null)
                 {
                     this._ShowTagsOrderToolStripMenuItem.Click += value2;
                 }
+
             }
         }
+
         internal virtual ToolStripMenuItem InsertBlankDataToolStripMenuItem
         {
             get
             {
                 return this._InsertBlankDataToolStripMenuItem;
             }
+
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -1037,19 +1190,23 @@ namespace Lethargy
                 {
                     this._InsertBlankDataToolStripMenuItem.Click -= value2;
                 }
+
                 this._InsertBlankDataToolStripMenuItem = value;
                 if (this._InsertBlankDataToolStripMenuItem != null)
                 {
                     this._InsertBlankDataToolStripMenuItem.Click += value2;
                 }
+
             }
         }
+
         public Form1()
         {
             this.MAP = new HaloMap();
             this.IDhash = new Hashtable();
             this.InitializeComponent();
         }
+
         [DebuggerNonUserCode]
         protected override void Dispose(bool disposing)
         {
@@ -1059,11 +1216,13 @@ namespace Lethargy
                 {
                     this.components.Dispose();
                 }
+
             }
             finally
             {
                 base.Dispose(disposing);
             }
+
         }
         [DebuggerStepThrough]
         private void InitializeComponent()
@@ -1863,6 +2022,7 @@ namespace Lethargy
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
         private void ReadMAPHeaders()
         {
             BinaryReader binaryReader = new BinaryReader(new FileStream(this.MAP.Path, FileMode.Open, FileAccess.Read));
@@ -1877,12 +2037,14 @@ namespace Lethargy
                 {
                     this.MAP.GameVersion = "[PC]";
                 }
+
                 else
                 {
                     if (flag == (num == 609))
                     {
                         this.MAP.GameVersion = "[CE]";
                     }
+
                 }
                 binaryReader.BaseStream.Position = 16L;
                 this.MAP.IndexOffset = binaryReader.ReadInt32();
@@ -1896,6 +2058,7 @@ namespace Lethargy
                     {
                         break;
                     }
+
                     checked
                     {
                         num2++;
@@ -1903,8 +2066,10 @@ namespace Lethargy
                         {
                             break;
                         }
+
                     }
                 }
+
                 binaryReader.BaseStream.Position = 32L;
                 string text = new string(binaryReader.ReadChars(num2));
                 bool flag2 = true;
@@ -1912,212 +2077,257 @@ namespace Lethargy
                 {
                     this.MAP.Name = "The Pillar of Autumn";
                 }
+
                 else
                 {
                     if (flag2 == (text.Equals("a30")))
                     {
                         this.MAP.Name = "Halo";
                     }
+
                     else
                     {
                         if (flag2 == (text.Equals("a50")))
                         {
                             this.MAP.Name = "Truth and Reconciliation";
                         }
+
                         else
                         {
                             if (flag2 == (text.Equals("b30")))
                             {
                                 this.MAP.Name = "The Silent Cartographer";
                             }
+
                             else
                             {
                                 if (flag2 == (text.Equals("b40")))
                                 {
                                     this.MAP.Name = "Assault on the Control Room";
                                 }
+
                                 else
                                 {
                                     if (flag2 == (text.Equals("c10")))
                                     {
                                         this.MAP.Name = "343 Guilty Spark";
                                     }
+
                                     else
                                     {
                                         if (flag2 == (text.Equals("c20")))
                                         {
                                             this.MAP.Name = "The Library";
                                         }
+
                                         else
                                         {
                                             if (flag2 == (text.Equals("c40")))
                                             {
                                                 this.MAP.Name = "Two Betrayals";
                                             }
+
                                             else
                                             {
                                                 if (flag2 == (text.Equals("d20")))
                                                 {
                                                     this.MAP.Name = "Keyes";
                                                 }
+
                                                 else
                                                 {
                                                     if (flag2 == (text.Equals("d40")))
                                                     {
                                                         this.MAP.Name = "The Maw";
                                                     }
+
                                                     else
                                                     {
                                                         if (flag2 == (text.Equals("beavercreek")))
                                                         {
                                                             this.MAP.Name = "Battle Creek";
                                                         }
+
                                                         else
                                                         {
                                                             if (flag2 == (text.Equals("bloodgulch")))
                                                             {
                                                                 this.MAP.Name = "Blood Gulch";
                                                             }
+
                                                             else
                                                             {
                                                                 if (flag2 == (text.Equals("carousel")))
                                                                 {
                                                                     this.MAP.Name = "Derelict";
                                                                 }
+
                                                                 else
                                                                 {
                                                                     if (flag2 == (text.Equals("prisoner")))
                                                                     {
                                                                         this.MAP.Name = "Prisoner";
                                                                     }
+
                                                                     else
                                                                     {
                                                                         if (flag2 == (text.Equals("hangemhigh")))
                                                                         {
                                                                             this.MAP.Name = "Hang 'Em High";
                                                                         }
+
                                                                         else
                                                                         {
                                                                             if (flag2 == (text.Equals("dangercanyon")))
                                                                             {
                                                                                 this.MAP.Name = "Danger Canyon";
                                                                             }
+
                                                                             else
                                                                             {
                                                                                 if (flag2 == (text.Equals("putput")))
                                                                                 {
                                                                                     this.MAP.Name = "Chiron TL34";
                                                                                 }
+
                                                                                 else
                                                                                 {
                                                                                     if (flag2 == (text.Equals("deathisland")))
                                                                                     {
                                                                                         this.MAP.Name = "Death Island";
                                                                                     }
+
                                                                                     else
                                                                                     {
                                                                                         if (flag2 == (text.Equals("boardingaction")))
                                                                                         {
                                                                                             this.MAP.Name = "Boarding Action";
                                                                                         }
+
                                                                                         else
                                                                                         {
                                                                                             if (flag2 == (text.Equals("chillout")))
                                                                                             {
                                                                                                 this.MAP.Name = "Chill Out";
                                                                                             }
+
                                                                                             else
                                                                                             {
                                                                                                 if (flag2 == (text.Equals("damnation")))
                                                                                                 {
                                                                                                     this.MAP.Name = "Damnation";
                                                                                                 }
+
                                                                                                 else
                                                                                                 {
                                                                                                     if (flag2 == (text.Equals("gephyrophobia")))
                                                                                                     {
                                                                                                         this.MAP.Name = "Gephyrophobia";
                                                                                                     }
+
                                                                                                     else
                                                                                                     {
                                                                                                         if (flag2 == (text.Equals("icefields")))
                                                                                                         {
                                                                                                             this.MAP.Name = "Icefields";
                                                                                                         }
+
                                                                                                         else
                                                                                                         {
                                                                                                             if (flag2 == (text.Equals("infinity")))
                                                                                                             {
                                                                                                                 this.MAP.Name = "Infinity";
                                                                                                             }
+
                                                                                                             else
                                                                                                             {
                                                                                                                 if (flag2 == (text.Equals("longest")))
                                                                                                                 {
                                                                                                                     this.MAP.Name = "Longest";
                                                                                                                 }
+
                                                                                                                 else
                                                                                                                 {
                                                                                                                     if (flag2 == (text.Equals("ratrace")))
                                                                                                                     {
                                                                                                                         this.MAP.Name = "Rat Race";
                                                                                                                     }
+
                                                                                                                     else
                                                                                                                     {
                                                                                                                         if (flag2 == (text.Equals("sidewinder")))
                                                                                                                         {
                                                                                                                             this.MAP.Name = "Sidewinder";
                                                                                                                         }
+
                                                                                                                         else
                                                                                                                         {
                                                                                                                             if (flag2 == (text.Equals("timberland")))
                                                                                                                             {
                                                                                                                                 this.MAP.Name = "Timberland";
                                                                                                                             }
+
                                                                                                                             else
                                                                                                                             {
                                                                                                                                 if (flag2 == (text.Equals("wizard")))
                                                                                                                                 {
                                                                                                                                     this.MAP.Name = "Wizard";
                                                                                                                                 }
+
                                                                                                                                 else
                                                                                                                                 {
                                                                                                                                     if (flag2 == (text.Equals("ui")))
                                                                                                                                     {
                                                                                                                                         this.MAP.Name = "User Interface";
                                                                                                                                     }
+
                                                                                                                                     else
                                                                                                                                     {
                                                                                                                                         this.MAP.Name = text;
                                                                                                                                     }
+
                                                                                                                                 }
                                                                                                                             }
+
                                                                                                                         }
                                                                                                                     }
+
                                                                                                                 }
                                                                                                             }
+
                                                                                                         }
                                                                                                     }
+
                                                                                                 }
                                                                                             }
+
                                                                                         }
                                                                                     }
+
                                                                                 }
                                                                             }
+
                                                                         }
                                                                     }
+
                                                                 }
                                                             }
+
                                                         }
                                                     }
+
                                                 }
                                             }
+
                                         }
                                     }
+
                                 }
                             }
+
                         }
                     }
+
                 }
                 binaryReader.BaseStream.Position = 96L;
                 short num3 = binaryReader.ReadInt16();
@@ -2126,20 +2336,24 @@ namespace Lethargy
                 {
                     this.MAP.PlayerType = "(SP)";
                 }
+
                 else
                 {
                     if (flag3 == (num3 == 1))
                     {
                         this.MAP.PlayerType = "(MP)";
                     }
+
                     else
                     {
                         if (flag3 == (num3 == 2))
                         {
                             this.MAP.PlayerType = "(UI)";
                         }
+
                     }
                 }
+
                 binaryReader.BaseStream.Position = (long)checked(this.MAP.IndexOffset + 0);
                 int magic = binaryReader.ReadInt32();
                 binaryReader.BaseStream.Position = (long)checked(this.MAP.IndexOffset + 12);
@@ -2147,25 +2361,30 @@ namespace Lethargy
                 this.TagsCache = new HaloTag[checked(this.MAP.TagCount - 1 + 1)];
                 this.MAP.Magic = magic;
             }
+
             else
             {
                 if (left.Equals("dehE"))
                 {
                     //Interaction.MsgBox("Buy the full version, it's only $20!!!", MsgBoxStyle.OkOnly, null);
                 }
+
                 else
                 {
                     //Interaction.MsgBox("Invalid map file", MsgBoxStyle.OkOnly, null);
                 }
+
             }
             binaryReader.Close();
         }
+
         public string ReverseString(string source)
         {
             char[] array = source.ToCharArray();
             Array.Reverse(array);
             return new string(array);
         }
+
         private void ReadMAPTags()
         {
             this.tv.Sorted = true;
@@ -2221,9 +2440,11 @@ namespace Lethargy
                         {
                             break;
                         }
+
                         binaryReader.BaseStream.Position = (long)num6;
                         b = binaryReader.ReadByte();
                     }
+
                     binaryReader.BaseStream.Position = binaryReader.BaseStream.Position - 1L;
                     while (b != 0)
                     {
@@ -2231,6 +2452,7 @@ namespace Lethargy
                         b = binaryReader.ReadByte();
                         binaryReader.BaseStream.Position = binaryReader.BaseStream.Position - 1L;
                     }
+
                     string text5 = text4;
                     text = text.Replace("�", "ÿ");
                     text2 = text2.Replace("�", "ÿ");
@@ -2241,14 +2463,17 @@ namespace Lethargy
                         this.cb1.Items.Add(text);
                         this.cbClass.Items.Add(text);
                     }
+
                     if (!this.cb2.Items.Contains(text2))
                     {
                         this.cb2.Items.Add(text2);
                     }
+
                     if (!this.cb3.Items.Contains(text3))
                     {
                         this.cb3.Items.Add(text3);
                     }
+
                     string key = text + "-" + text5;
                     this.tv.Nodes[text].Nodes.Add(key, text5);
                     this.tv.Nodes[text].Nodes[key].Tag = i;
@@ -2256,6 +2481,7 @@ namespace Lethargy
                     {
                         this.tv.Nodes[text].Nodes[key].ForeColor = Color.Gray;
                     }
+
                     this.IDhash.Add(num5, i);
                     int metaSize = 0;
                     if (i == this.MAP.TagCount - 1)
@@ -2263,6 +2489,7 @@ namespace Lethargy
                         metaSize = this.MAP.TotalMetaSize - num7;
                         this.TagsCache[i - 1].MetaSize = metaSize;
                     }
+
                     else
                     {
                         if (i != 0)
@@ -2270,6 +2497,7 @@ namespace Lethargy
                             metaSize = num7 - num2;
                             this.TagsCache[i - 1].MetaSize = metaSize;
                         }
+
                     }
                     num2 = num7;
                     this.TagsCache[i] = new HaloTag(num5, num7, metaSize, text, text2, text3, text5, num6, num + i * 32, i);
@@ -2278,11 +2506,13 @@ namespace Lethargy
                         this.ReadBSP(num3, i);
                         num3++;
                     }
+
                 }
                 this.AddItemsCount();
                 binaryReader.Close();
                 this.tv.EndUpdate();
             }
+
         }
         public void ReadBSP(int number, int index)
         {
@@ -2297,6 +2527,7 @@ namespace Lethargy
             this.TagsCache[index].MetaOffset = metaOffset;
             this.TagsCache[index].MetaSize = metaSize;
         }
+
         public void AddItemsCount()
         {
             int arg_10_0 = 0;
@@ -2310,524 +2541,636 @@ namespace Lethargy
                     {
                         text = " Item)";
                     }
+
                     else
                     {
                         text = " Items)";
                     }
+
                     bool flag = true;
                     string text2;
                     if (flag == (this.tv.Nodes[i].Name.Equals("actr")))
                     {
                         text2 = "Actor";
                     }
+
                     else
                     {
                         if (flag == (this.tv.Nodes[i].Name.Equals("actv")))
                         {
                             text2 = "Actor Variant";
                         }
+
                         else
                         {
                             if (flag == (this.tv.Nodes[i].Name.Equals("bitm")))
                             {
                                 text2 = "Bitmaps";
                             }
+
                             else
                             {
                                 if (flag == (this.tv.Nodes[i].Name.Equals("bipd")))
                                 {
                                     text2 = "Biped";
                                 }
+
                                 else
                                 {
                                     if (flag == (this.tv.Nodes[i].Name.Equals("weap")))
                                     {
                                         text2 = "Weapon";
                                     }
+
                                     else
                                     {
                                         if (flag == (this.tv.Nodes[i].Name.Equals("vehi")))
                                         {
                                             text2 = "Vehicle";
                                         }
+
                                         else
                                         {
                                             if (flag == (this.tv.Nodes[i].Name.Equals("scen")))
                                             {
                                                 text2 = "Scenery";
                                             }
+
                                             else
                                             {
                                                 if (flag == (this.tv.Nodes[i].Name.Equals("scnr")))
                                                 {
                                                     text2 = "Scenario";
                                                 }
+
                                                 else
                                                 {
                                                     if (flag == (this.tv.Nodes[i].Name.Equals("sbsp")))
                                                     {
                                                         text2 = "Structure BSP";
                                                     }
+
                                                     else
                                                     {
                                                         if (flag == (this.tv.Nodes[i].Name.Equals("effe")))
                                                         {
                                                             text2 = "Effect";
                                                         }
+
                                                         else
                                                         {
                                                             if (flag == (this.tv.Nodes[i].Name.Equals("glw!")))
                                                             {
                                                                 text2 = "Glow";
                                                             }
+
                                                             else
                                                             {
                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("elec")))
                                                                 {
                                                                     text2 = "Lightning";
                                                                 }
+
                                                                 else
                                                                 {
                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("coll")))
                                                                     {
                                                                         text2 = "Collision Model";
                                                                     }
+
                                                                     else
                                                                     {
                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("antr")))
                                                                         {
                                                                             text2 = "Animation Trigger";
                                                                         }
+
                                                                         else
                                                                         {
                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("ant!")))
                                                                             {
                                                                                 text2 = "Antenna";
                                                                             }
+
                                                                             else
                                                                             {
                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("colo")))
                                                                                 {
                                                                                     text2 = "Color Table";
                                                                                 }
+
                                                                                 else
                                                                                 {
                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("cont")))
                                                                                     {
                                                                                         text2 = "Contrail";
                                                                                     }
+
                                                                                     else
                                                                                     {
                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("deca")))
                                                                                         {
                                                                                             text2 = "Decal";
                                                                                         }
+
                                                                                         else
                                                                                         {
                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("ant!")))
                                                                                             {
                                                                                                 text2 = "Antenna";
                                                                                             }
+
                                                                                             else
                                                                                             {
                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("DeLa")))
                                                                                                 {
                                                                                                     text2 = "UI Widget Definition";
                                                                                                 }
+
                                                                                                 else
                                                                                                 {
                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("eqip")))
                                                                                                     {
                                                                                                         text2 = "Equipment";
                                                                                                     }
+
                                                                                                     else
                                                                                                     {
                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("foot")))
                                                                                                         {
                                                                                                             text2 = "Material Effect";
                                                                                                         }
+
                                                                                                         else
                                                                                                         {
                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("flag")))
                                                                                                             {
                                                                                                                 text2 = "Flag";
                                                                                                             }
+
                                                                                                             else
                                                                                                             {
                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("font")))
                                                                                                                 {
                                                                                                                     text2 = "Font";
                                                                                                                 }
+
                                                                                                                 else
                                                                                                                 {
                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("grhi")))
                                                                                                                     {
                                                                                                                         text2 = "Grenade HUD Inteface";
                                                                                                                     }
+
                                                                                                                     else
                                                                                                                     {
                                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("wphi")))
                                                                                                                         {
                                                                                                                             text2 = "Weapon HUD Inteface";
                                                                                                                         }
+
                                                                                                                         else
                                                                                                                         {
                                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("hmt ")))
                                                                                                                             {
                                                                                                                                 text2 = "HUD Message Text";
                                                                                                                             }
+
                                                                                                                             else
                                                                                                                             {
                                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("fog ")))
                                                                                                                                 {
                                                                                                                                     text2 = "Fog";
                                                                                                                                 }
+
                                                                                                                                 else
                                                                                                                                 {
                                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("hud#")))
                                                                                                                                     {
                                                                                                                                         text2 = "HUD Number";
                                                                                                                                     }
+
                                                                                                                                     else
                                                                                                                                     {
                                                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("hudg")))
                                                                                                                                         {
                                                                                                                                             text2 = "HUD Globals";
                                                                                                                                         }
+
                                                                                                                                         else
                                                                                                                                         {
                                                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("itmc")))
                                                                                                                                             {
                                                                                                                                                 text2 = "Item Collection";
                                                                                                                                             }
+
                                                                                                                                             else
                                                                                                                                             {
                                                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("lens")))
                                                                                                                                                 {
                                                                                                                                                     text2 = "Lens Flare";
                                                                                                                                                 }
+
                                                                                                                                                 else
                                                                                                                                                 {
                                                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("soso")))
                                                                                                                                                     {
                                                                                                                                                         text2 = "Shader Model";
                                                                                                                                                     }
+
                                                                                                                                                     else
                                                                                                                                                     {
                                                                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("scex")))
                                                                                                                                                         {
                                                                                                                                                             text2 = "Shader Transparent Chicago Extended";
                                                                                                                                                         }
+
                                                                                                                                                         else
                                                                                                                                                         {
                                                                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("schi")))
                                                                                                                                                             {
                                                                                                                                                                 text2 = "Shader Transparent Chicago";
                                                                                                                                                             }
+
                                                                                                                                                             else
                                                                                                                                                             {
                                                                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("sky ")))
                                                                                                                                                                 {
                                                                                                                                                                     text2 = "Sky";
                                                                                                                                                                 }
+
                                                                                                                                                                 else
                                                                                                                                                                 {
                                                                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("Soul")))
                                                                                                                                                                     {
                                                                                                                                                                         text2 = "UI Widget Collection";
                                                                                                                                                                     }
+
                                                                                                                                                                     else
                                                                                                                                                                     {
                                                                                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("trak")))
                                                                                                                                                                         {
                                                                                                                                                                             text2 = "Track";
                                                                                                                                                                         }
+
                                                                                                                                                                         else
                                                                                                                                                                         {
                                                                                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("swat")))
                                                                                                                                                                             {
                                                                                                                                                                                 text2 = "Shader Water";
                                                                                                                                                                             }
+
                                                                                                                                                                             else
                                                                                                                                                                             {
                                                                                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("spla")))
                                                                                                                                                                                 {
                                                                                                                                                                                     text2 = "Shader Plasma";
                                                                                                                                                                                 }
+
                                                                                                                                                                                 else
                                                                                                                                                                                 {
                                                                                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("udlg")))
                                                                                                                                                                                     {
                                                                                                                                                                                         text2 = "Unit Dialog";
                                                                                                                                                                                     }
+
                                                                                                                                                                                     else
                                                                                                                                                                                     {
                                                                                                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("wind")))
                                                                                                                                                                                         {
                                                                                                                                                                                             text2 = "Wind";
                                                                                                                                                                                         }
+
                                                                                                                                                                                         else
                                                                                                                                                                                         {
                                                                                                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("ustr")))
                                                                                                                                                                                             {
                                                                                                                                                                                                 text2 = "Unicode String List";
                                                                                                                                                                                             }
+
                                                                                                                                                                                             else
                                                                                                                                                                                             {
                                                                                                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("str#")))
                                                                                                                                                                                                 {
                                                                                                                                                                                                     text2 = "String List";
                                                                                                                                                                                                 }
+
                                                                                                                                                                                                 else
                                                                                                                                                                                                 {
                                                                                                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("ssce")))
                                                                                                                                                                                                     {
                                                                                                                                                                                                         text2 = "Sound Scenery";
                                                                                                                                                                                                     }
+
                                                                                                                                                                                                     else
                                                                                                                                                                                                     {
                                                                                                                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("smet")))
                                                                                                                                                                                                         {
                                                                                                                                                                                                             text2 = "Shader Meter";
                                                                                                                                                                                                         }
+
                                                                                                                                                                                                         else
                                                                                                                                                                                                         {
                                                                                                                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("mod2")))
                                                                                                                                                                                                             {
                                                                                                                                                                                                                 text2 = "Model";
                                                                                                                                                                                                             }
+
                                                                                                                                                                                                             else
                                                                                                                                                                                                             {
                                                                                                                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("snd!")))
                                                                                                                                                                                                                 {
                                                                                                                                                                                                                     text2 = "Sound";
                                                                                                                                                                                                                 }
+
                                                                                                                                                                                                                 else
                                                                                                                                                                                                                 {
                                                                                                                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("lsnd")))
                                                                                                                                                                                                                     {
                                                                                                                                                                                                                         text2 = "Sound Looping";
                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                     else
                                                                                                                                                                                                                     {
                                                                                                                                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("tagc")))
                                                                                                                                                                                                                         {
                                                                                                                                                                                                                             text2 = "Tag Collection";
                                                                                                                                                                                                                         }
+
                                                                                                                                                                                                                         else
                                                                                                                                                                                                                         {
                                                                                                                                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("snde")))
                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                 text2 = "Sound Enviroment";
                                                                                                                                                                                                                             }
+
                                                                                                                                                                                                                             else
                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("senv")))
                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                     text2 = "Shader Enviroment";
                                                                                                                                                                                                                                 }
+
                                                                                                                                                                                                                                 else
                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("proj")))
                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                         text2 = "Projectile";
                                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                                     else
                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("phys")))
                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                             text2 = "Physics";
                                                                                                                                                                                                                                         }
+
                                                                                                                                                                                                                                         else
                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("pphy")))
                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                 text2 = "Point Physics";
                                                                                                                                                                                                                                             }
+
                                                                                                                                                                                                                                             else
                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("pctl")))
                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                     text2 = "Particle System";
                                                                                                                                                                                                                                                 }
+
                                                                                                                                                                                                                                                 else
                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("sgla")))
                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                         text2 = "Shader Transparent Glass";
                                                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                                                     else
                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("mgs2")))
                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                             text2 = "Light Volume";
                                                                                                                                                                                                                                                         }
+
                                                                                                                                                                                                                                                         else
                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("matg")))
                                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                                 text2 = "Game Globals";
                                                                                                                                                                                                                                                             }
+
                                                                                                                                                                                                                                                             else
                                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("unhi")))
                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                     text2 = "Unit HUD Interface";
                                                                                                                                                                                                                                                                 }
+
                                                                                                                                                                                                                                                                 else
                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("devc")))
                                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                                         text2 = "Device";
                                                                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                                                                     else
                                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("metr")))
                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                             text2 = "Meter";
                                                                                                                                                                                                                                                                         }
+
                                                                                                                                                                                                                                                                         else
                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("part")))
                                                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                                                 text2 = "Particle";
                                                                                                                                                                                                                                                                             }
+
                                                                                                                                                                                                                                                                             else
                                                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("jpt!")))
                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                     text2 = "Damage";
                                                                                                                                                                                                                                                                                 }
+
                                                                                                                                                                                                                                                                                 else
                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("rain")))
                                                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                                                         text2 = "Rain";
                                                                                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                                                                                     else
                                                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("lifi")))
                                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                                             text2 = "Light Fixture";
                                                                                                                                                                                                                                                                                         }
+
                                                                                                                                                                                                                                                                                         else
                                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("mach")))
                                                                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                                                                 text2 = "Machine";
                                                                                                                                                                                                                                                                                             }
+
                                                                                                                                                                                                                                                                                             else
                                                                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("dobc")))
                                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                                     text2 = "Detail Object Collection";
                                                                                                                                                                                                                                                                                                 }
+
                                                                                                                                                                                                                                                                                                 else
                                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("ligh")))
                                                                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                                                                         text2 = "Light";
                                                                                                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                                                                                                     else
                                                                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                                                                         if (flag == (this.tv.Nodes[i].Name.Equals("ctrl")))
                                                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                                                             text2 = "Control";
                                                                                                                                                                                                                                                                                                         }
+
                                                                                                                                                                                                                                                                                                         else
                                                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                                                             if (flag == (this.tv.Nodes[i].Name.Equals("garb")))
                                                                                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                                                                                 text2 = "Garbage";
                                                                                                                                                                                                                                                                                                             }
+
                                                                                                                                                                                                                                                                                                             else
                                                                                                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                                                                                                 if (flag == (this.tv.Nodes[i].Name.Equals("vcky")))
                                                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                                                     text2 = "Virtual Keyboard";
                                                                                                                                                                                                                                                                                                                 }
+
                                                                                                                                                                                                                                                                                                                 else
                                                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                                                     if (flag == (this.tv.Nodes[i].Name.Equals("mply")))
                                                                                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                                                                                         text2 = "Multiplayer Scenarios";
                                                                                                                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                                                                                                                     else
                                                                                                                                                                                                                                                                                                                     {
                                                                                                                                                                                                                                                                                                                         text2 = this.tv.Nodes[i].Name.ToUpper() + " Tag (Unknown)";
                                                                                                                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                                                                             }
+
                                                                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                                                             }
+
                                                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                                             }
+
                                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                             }
+
                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                             }
+
                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                             }
+
                                                                                                                                                                                                                         }
                                                                                                                                                                                                                     }
+
                                                                                                                                                                                                                 }
                                                                                                                                                                                                             }
+
                                                                                                                                                                                                         }
                                                                                                                                                                                                     }
+
                                                                                                                                                                                                 }
                                                                                                                                                                                             }
+
                                                                                                                                                                                         }
                                                                                                                                                                                     }
+
                                                                                                                                                                                 }
                                                                                                                                                                             }
+
                                                                                                                                                                         }
                                                                                                                                                                     }
+
                                                                                                                                                                 }
                                                                                                                                                             }
+
                                                                                                                                                         }
                                                                                                                                                     }
+
                                                                                                                                                 }
                                                                                                                                             }
+
                                                                                                                                         }
                                                                                                                                     }
+
                                                                                                                                 }
                                                                                                                             }
+
                                                                                                                         }
                                                                                                                     }
+
                                                                                                                 }
                                                                                                             }
+
                                                                                                         }
                                                                                                     }
+
                                                                                                 }
                                                                                             }
+
                                                                                         }
                                                                                     }
+
                                                                                 }
                                                                             }
+
                                                                         }
                                                                     }
+
                                                                 }
                                                             }
+
                                                         }
                                                     }
+
                                                 }
                                             }
+
                                         }
                                     }
+
                                 }
                             }
+
                         }
                     }
+
                     this.tv.Nodes[i].Text = string.Concat(new string[]
                     {
                         this.tv.Nodes[i].Text,
@@ -2838,8 +3181,10 @@ namespace Lethargy
                         text
                     });
                 }
+
             }
         }
+
         private void OpenMap(string path)
         {
             this.CloseMap();
@@ -2865,21 +3210,25 @@ namespace Lethargy
             this.ShowTagsOrderToolStripMenuItem.Enabled = true;
             this.InsertBlankDataToolStripMenuItem.Enabled = true;
         }
+
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void tv_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (Operators.ConditionalCompareObjectEqual(this.IsClass(this.tv.SelectedNode.Name), true, false))
             {
                 return;
             }
+
             if (this.tv.SelectedNode.ForeColor == Color.Gray)
             {
                 Interaction.MsgBox("Cannot edit indexed CE tags.", MsgBoxStyle.OkOnly, null);
                 return;
             }
+
             this.btnExtract.Enabled = true;
             this.btnSave.Enabled = true;
             HaloTag haloTag = this.TagsCache[Convert.ToInt32(this.tv.SelectedNode.Tag)];
@@ -2906,6 +3255,7 @@ namespace Lethargy
                     {
                         break;
                     }
+
                     int num2 = binaryReader.ReadInt32();
                     if (this.IDhash.ContainsKey(num2))
                     {
@@ -2924,6 +3274,7 @@ namespace Lethargy
                                     "DEP"
                                 });
                             }
+
                             else
                             {
                                 this.dgv.Rows.Add(new object[]
@@ -2933,6 +3284,7 @@ namespace Lethargy
                                     "LID"
                                 });
                             }
+
                         }
                         catch (Exception expr_2AF)
                         {
@@ -2945,8 +3297,10 @@ namespace Lethargy
                             });
                             //ProjectData.ClearProjectError();
                         }
+
                         this.dgv.Rows[this.dgv.Rows.Count - 1].Tag = haloTag.MetaOffset + i;
                     }
+
                     else
                     {
                         if (num2 == -1)
@@ -2966,14 +3320,17 @@ namespace Lethargy
                                     });
                                     this.dgv.Rows[this.dgv.Rows.Count - 1].Tag = haloTag.MetaOffset + i;
                                 }
+
                             }
                             catch (Exception expr_3E4)
                             {
                                 //ProjectData.SetProjectError(expr_3E4);
                                 //ProjectData.ClearProjectError();
                             }
+
                         }
                     }
+
                 }
                 binaryReader.Close();
                 if (!(haloTag.Class1.Equals("sbsp")))
@@ -2987,8 +3344,10 @@ namespace Lethargy
                         this.ReadTag(haloTag.MetaOffset);
                         this.CreateGUI();
                     }
+
                 }
             }
+
         }
         public object IsClass(string PrimaryClass)
         {
@@ -3004,9 +3363,11 @@ namespace Lethargy
                         flag = true;
                         break;
                     }
+
                 }
                 return flag;
             }
+
         }
         public void ExtractMeta()
         {
@@ -3016,11 +3377,13 @@ namespace Lethargy
                 {
                     return;
                 }
+
                 if (this.tv.SelectedNode.ForeColor == Color.Gray)
                 {
                     //Interaction.MsgBox("Cannot extract indexed CE tags.", MsgBoxStyle.OkOnly, null);
                     return;
                 }
+
             }
             catch (Exception expr_59)
             {
@@ -3028,6 +3391,7 @@ namespace Lethargy
                 //ProjectData.ClearProjectError();
                 return;
             }
+
             HaloTag haloTag = this.TagsCache[Convert.ToInt32(this.tv.SelectedNode.Tag)];
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = string.Concat(new string[]
@@ -3085,16 +3449,19 @@ namespace Lethargy
                                 num++;
                                 xmlTextWriter.WriteStartElement("Dependency", null);
                             }
+
                             else
                             {
                                 num2++;
                                 xmlTextWriter.WriteStartElement("LoneID", null);
                             }
+
                             xmlTextWriter.WriteElementString("Location", "0x" + Conversion.Hex(i));
                             xmlTextWriter.WriteElementString("Tagclass", this.ReverseString(haloTag2.Class1) + this.ReverseString(haloTag2.Class2) + this.ReverseString(haloTag2.Class3));
                             xmlTextWriter.WriteElementString("Filename", haloTag2.Name);
                             xmlTextWriter.WriteEndElement();
                         }
+
                         else
                         {
                             try
@@ -3111,14 +3478,17 @@ namespace Lethargy
                                     xmlTextWriter.WriteElementString("ChunkCount", Conversions.ToString(value));
                                     xmlTextWriter.WriteEndElement();
                                 }
+
                             }
                             catch (Exception expr_47B)
                             {
                                 //ProjectData.SetProjectError(expr_47B);
                                 //ProjectData.ClearProjectError();
                             }
+
                         }
                     }
+
                     binaryReader.Close();
                     binaryWriter.Close();
                     xmlTextWriter.WriteEndElement();
@@ -3135,12 +3505,15 @@ namespace Lethargy
                         ")"
                     }), MsgBoxStyle.OkOnly, null);
                 }
+
             }
         }
+
         private void btnExtract_Click(object sender, EventArgs e)
         {
             this.ExtractMeta();
         }
+
         public void LoadPlugin(string PrimaryTagClass)
         {
             string text = Application.StartupPath + "\\Plugins\\" + PrimaryTagClass + ".xml";
@@ -3184,6 +3557,7 @@ namespace Lethargy
                                         this.@struct[i].values[j].offset_options[k - 3].op_value = (int)Math.Round(Conversion.Val(childNodes[k].ChildNodes[0].InnerText));
                                         this.@struct[i].values[j].offset_options[k - 3].op_name = childNodes[k].ChildNodes[1].InnerText;
                                     }
+
                                     else
                                     {
                                         if (name.Equals("bitmask"))
@@ -3191,14 +3565,18 @@ namespace Lethargy
                                             this.@struct[i].values[j].offset_options[k - 3].op_value = (int)Math.Round(Conversion.Val(childNodes[k].ChildNodes[0].InnerText));
                                             this.@struct[i].values[j].offset_options[k - 3].op_name = childNodes[k].ChildNodes[1].InnerText;
                                         }
+
                                     }
                                 }
+
                             }
                         }
+
                     }
                     xmlTextReader.Close();
                     return;
                 }
+
                 this.MetaTab.Controls.Clear();
                 Label label = new Label();
                 label.Text = "(No plugin)";
@@ -3209,6 +3587,7 @@ namespace Lethargy
                 this.pluginLoaded = false;
                 this.Tabs.SelectedIndex = 1;
             }
+
         }
         public void CreateGUI()
         {
@@ -3255,10 +3634,13 @@ namespace Lethargy
                                 {
                                     comboBox.Items.Add(k);
                                 }
+
                             }
                         }
+
                         num += 25;
                     }
+
                     Control arg_252_0 = groupBox;
                     location = new Point(2, num);
                     arg_252_0.Location = location;
@@ -3275,18 +3657,22 @@ namespace Lethargy
                         {
                             goto IL_2E2;
                         }
+
                         if (type.Equals("string32"))
                         {
                             goto IL_2E2;
                         }
+
                         if (type.Equals("integer"))
                         {
                             goto IL_2E2;
                         }
+
                         if (type.Equals("short"))
                         {
                             goto IL_2E2;
                         }
+
                         if (type.Equals("id32") || type.Equals("id16"))
                         {
                             GroupBox groupBox2 = new GroupBox();
@@ -3314,10 +3700,12 @@ namespace Lethargy
                                 {
                                     radioButton.Checked = true;
                                 }
+
                                 else
                                 {
                                     radioButton.Checked = false;
                                 }
+
                                 Control arg_71F_0 = radioButton;
                                 location = new Point(x2, num8);
                                 arg_71F_0.Location = location;
@@ -3333,16 +3721,19 @@ namespace Lethargy
                                     x2 = 10;
                                     num8 += 15;
                                 }
+
                                 else
                                 {
                                     x2 = (int)Math.Round((double)this.MetaTab.Width / 2.0);
                                 }
+
                             }
                             groupBox.Controls.Add(groupBox2);
                             num6 += groupBox2.Height;
                             x = 10;
                             num2 += this.@struct[i].values[j].offset_options.Length;
                         }
+
                         else
                         {
                             if (type.Equals("bitmask32"))
@@ -3403,10 +3794,12 @@ namespace Lethargy
                                         {
                                             this.@struct[num11].values[num12].offset_options[num13].op_value = (int)Conversions.ChangeType(RuntimeHelpers.GetObjectValue(array2[0]), typeof(int));
                                         }
+
                                         if (Conversions.ToBoolean(arg_B35_0))
                                         {
                                             checkBox.Checked = true;
                                         }
+
                                     }
                                     checkBox.CheckedChanged += new EventHandler(this.somethingChanged);
                                     groupBox3.Controls.Add(checkBox);
@@ -3416,16 +3809,19 @@ namespace Lethargy
                                         x2 = 10;
                                         num8 += 15;
                                     }
+
                                     else
                                     {
                                         x2 = (int)Math.Round((double)this.MetaTab.Width / 2.0);
                                     }
+
                                 }
                                 groupBox.Controls.Add(groupBox3);
                                 num6 += groupBox3.Height;
                                 num2 += this.@struct[i].values[j].offset_options.Length;
                                 x = 10;
                             }
+
                         }
                     IL_BE9:
                         j++;
@@ -3439,6 +3835,7 @@ namespace Lethargy
                         {
                             textBox.Text = Conversions.ToString(this.@struct[i].values[j].data);
                         }
+
                         label2.Name = this.@struct[i].values[j].name + "Label";
                         label2.Text = this.@struct[i].values[j].name;
                         label2.TabIndex = num2;
@@ -3463,18 +3860,22 @@ namespace Lethargy
                         num2 += 2;
                         goto IL_BE9;
                     }
+
                     Control arg_C12_0 = groupBox;
                     size = new Size(this.MetaTab.Width - 24, num6 + 5);
                     arg_C12_0.Size = size;
                     num += groupBox.Height;
                     this.MetaTab.Controls.Add(groupBox);
                 }
+
             }
         }
+
         private void SetUserDidIt(object sender, EventArgs e)
         {
             this.userdidit = true;
         }
+
         private void somethingChanged(object sender, EventArgs e)
         {
             checked
@@ -3502,8 +3903,10 @@ namespace Lethargy
                                     comboBox.SelectedIndex = selectedIndex;
                                     break;
                                 }
+
                             }
                         }
+
                     }
                     else
                     {
@@ -3515,6 +3918,7 @@ namespace Lethargy
                             {
                                 this.WriteTag();
                             }
+
                             else
                             {
                                 int arg_14D_0 = 0;
@@ -3527,8 +3931,10 @@ namespace Lethargy
                                         this.WriteReflexive(Strings.Mid(textBox.Parent.Name, 1, textBox.Parent.Name.IndexOf("GroupBox")), comboBox2.SelectedIndex);
                                         break;
                                     }
+
                                 }
                             }
+
                         }
                         else
                         {
@@ -3540,6 +3946,7 @@ namespace Lethargy
                                 {
                                     this.WriteTag();
                                 }
+
                                 else
                                 {
                                     int arg_29A_0 = 0;
@@ -3552,8 +3959,10 @@ namespace Lethargy
                                             this.WriteReflexive(Strings.Mid(checkBox.Parent.Parent.Name, 1, checkBox.Parent.Parent.Name.IndexOf("GroupBox")), comboBox3.SelectedIndex);
                                             break;
                                         }
+
                                     }
                                 }
+
                             }
                             else
                             {
@@ -3564,10 +3973,12 @@ namespace Lethargy
                                     {
                                         radioButton.Checked = this.SetValue(Strings.Mid(radioButton.Parent.Name, 1, radioButton.Parent.Name.IndexOf("Group")), RuntimeHelpers.GetObjectValue(radioButton.Tag));
                                     }
+
                                     if (radioButton.Parent.Parent.Name.Equals("MainGroupBox"))
                                     {
                                         this.WriteTag();
                                     }
+
                                     else
                                     {
                                         int arg_404_0 = 0;
@@ -3580,12 +3991,16 @@ namespace Lethargy
                                                 this.WriteReflexive(Strings.Mid(radioButton.Parent.Parent.Name, 1, radioButton.Parent.Parent.Name.IndexOf("GroupBox")), comboBox4.SelectedIndex);
                                                 break;
                                             }
+
                                         }
                                     }
+
                                 }
                             }
+
                         }
                     }
+
                 }
                 catch (Exception arg_4D0_0)
                 {
@@ -3593,8 +4008,10 @@ namespace Lethargy
                     MessageBox.Show("An error occured while attempting to update the metadata.");
                     //ProjectData.ClearProjectError();
                 }
+
             }
         }
+
         public bool SetValue(string valName, object val)
         {
             int arg_0C_0 = 0;
@@ -3612,10 +4029,13 @@ namespace Lethargy
                             this.@struct[i].values[j].data = RuntimeHelpers.GetObjectValue(val);
                             return true;
                         }
+
                     }
                 }
+
                 return false;
             }
+
         }
         public bool SetOption(string valName, object val)
         {
@@ -3642,6 +4062,7 @@ namespace Lethargy
                                 {
                                     val = RuntimeHelpers.GetObjectValue(objArray[0]);
                                 }
+
                                 objArray = new object[1];
                                 objArray[0] = RuntimeHelpers.GetObjectValue(val);
                                 objectValue = objArray;
@@ -3652,18 +4073,23 @@ namespace Lethargy
                                 {
                                     val = RuntimeHelpers.GetObjectValue(objectValue[0]);
                                 }
+
                                 return Conversions.ToBoolean(obj);
                             }
+
                         }
                         else
                         {
                             return false;
                         }
+
                     }
                 }
+
             }
             return flag;
         }
+
         public void WriteTag()
         {
             BinaryWriter binaryWriter = new BinaryWriter(new FileStream(this.MAP.Path, FileMode.Open, FileAccess.Write));
@@ -3684,9 +4110,11 @@ namespace Lethargy
                         {
                             this.@struct[0].values[i].data = 0;
                         }
+
                         float value = Convert.ToSingle(this.@struct[0].values[i].data);
                         binaryWriter.Write(value);
                     }
+
                     else
                     {
                         if (type.Equals("string32"))
@@ -3694,6 +4122,7 @@ namespace Lethargy
                             string value2 = this.@struct[0].values[i].data as string;
                             binaryWriter.Write(value2);
                         }
+
                         else
                         {
                             if (type.Equals("id32") || type.Equals("integer"))
@@ -3702,9 +4131,11 @@ namespace Lethargy
                                 {
                                     this.@struct[0].values[i].data = 0;
                                 }
+
                                 int value3 = Convert.ToInt32(this.@struct[0].values[i].data);
                                 binaryWriter.Write(value3);
                             }
+
                             else
                             {
                                 if (type.Equals("short") || type.Equals("id16"))
@@ -3713,9 +4144,11 @@ namespace Lethargy
                                     {
                                         this.@struct[0].values[i].data = 0;
                                     }
+
                                     short value4 = Conversions.ToShort(this.@struct[0].values[i].data);
                                     binaryWriter.Write(value4);
                                 }
+
                                 else
                                 {
                                     if (type.Equals("reflexive"))
@@ -3724,11 +4157,13 @@ namespace Lethargy
                                         {
                                             this.@struct[0].values[i].data = 0;
                                         }
+
                                         int count = this.@struct[0].values[i].count;
                                         int value5 = Convert.ToInt32(this.@struct[0].values[i].data);
                                         binaryWriter.Write(count);
                                         binaryWriter.Write(value5);
                                     }
+
                                     else
                                     {
                                         if (type.Equals("bitmask32"))
@@ -3736,14 +4171,19 @@ namespace Lethargy
                                             int value6 = Convert.ToInt32(NewLateBinding.LateGet(this.@struct[0].values[i].data, null, "ToInt", new object[0], null, null, null));
                                             binaryWriter.Write(value6);
                                         }
+
                                     }
                                 }
+
                             }
                         }
+
                     }
                 }
+
                 binaryWriter.Close();
             }
+
         }
         public void ReadTag(int offset)
         {
@@ -3760,6 +4200,7 @@ namespace Lethargy
                     {
                         this.@struct[0].values[i].data = binaryReader.ReadSingle();
                     }
+
                     else
                     {
                         if (type.Equals("string32"))
@@ -3770,24 +4211,28 @@ namespace Lethargy
                                 32
                             }, null, null, null, true);
                         }
+
                         else
                         {
                             if (type.Equals("id32"))
                             {
                                 this.@struct[0].values[i].data = binaryReader.ReadInt32();
                             }
+
                             else
                             {
                                 if (type.Equals("integer"))
                                 {
                                     this.@struct[0].values[i].data = binaryReader.ReadInt32();
                                 }
+
                                 else
                                 {
                                     if (type.Equals("short") || type.Equals("id16"))
                                     {
                                         this.@struct[0].values[i].data = binaryReader.ReadInt16();
                                     }
+
                                     else
                                     {
                                         if (type.Equals("reflexive"))
@@ -3795,21 +4240,27 @@ namespace Lethargy
                                             this.@struct[0].values[i].count = binaryReader.ReadInt32();
                                             this.@struct[0].values[i].data = binaryReader.ReadInt32();
                                         }
+
                                         else
                                         {
                                             if (type.Equals("bitmask32"))
                                             {
                                                 this.@struct[0].values[i].data = new BitMask(binaryReader.ReadInt32());
                                             }
+
                                         }
                                     }
+
                                 }
                             }
+
                         }
                     }
+
                 }
                 binaryReader.Close();
             }
+
         }
         public void ReadReflexive(string type, int num)
         {
@@ -3823,6 +4274,7 @@ namespace Lethargy
                 {
                     objectValue = RuntimeHelpers.GetObjectValue(this.@struct[0].values[i].data);
                 }
+
             }
             int length1 = (int)this.@struct.Length - 1;
             for (int i = 0; i <= length1; i++)
@@ -3831,6 +4283,7 @@ namespace Lethargy
                 {
                     obj = i;
                 }
+
             }
             objectValue = Operators.AddObject(Operators.SubtractObject(objectValue, this.MAP.Magic), num * this.@struct[Conversions.ToInteger(obj)].size);
             int num1 = (int)this.@struct[Conversions.ToInteger(obj)].values.Length - 1;
@@ -3846,20 +4299,24 @@ namespace Lethargy
                         {
                             this.@struct[Conversions.ToInteger(obj)].values[j].data = binaryReader.ReadInt32();
                         }
+
                         else
                         {
                             if (Operators.CompareString(str, "short", false) == 0 || Operators.CompareString(str, "id16", false) == 0)
                             {
                                 this.@struct[Conversions.ToInteger(obj)].values[j].data = binaryReader.ReadInt16();
                             }
+
                             else
                             {
                                 if (Operators.CompareString(str, "bitmask32", false) == 0)
                                 {
                                     this.@struct[Conversions.ToInteger(obj)].values[j].data = new BitMask(binaryReader.ReadInt32());
                                 }
+
                             }
                         }
+
                     }
                     else
                     {
@@ -3868,15 +4325,19 @@ namespace Lethargy
                         {
                             this.@struct[Conversions.ToInteger(obj)].values[j].data = Operators.ConcatenateObject(this.@struct[Conversions.ToInteger(obj)].values[j].data, Strings.Chr(binaryReader.ReadByte()));
                         }
+
                     }
                 }
+
                 else
                 {
                     this.@struct[Conversions.ToInteger(obj)].values[j].data = binaryReader.ReadSingle();
                 }
+
             }
             binaryReader.Close();
         }
+
         public void WriteReflexive(string type, int num)
         {
             object objectValue = null;
@@ -3889,6 +4350,7 @@ namespace Lethargy
                 {
                     objectValue = RuntimeHelpers.GetObjectValue(this.@struct[0].values[i].data);
                 }
+
             }
             int length1 = (int)this.@struct.Length - 1;
             for (int i = 0; i <= length1; i++)
@@ -3897,6 +4359,7 @@ namespace Lethargy
                 {
                     obj = i;
                 }
+
             }
             objectValue = Operators.AddObject(Operators.SubtractObject(objectValue, this.MAP.Magic), num * this.@struct[Conversions.ToInteger(obj)].size);
             int num1 = (int)this.@struct[Conversions.ToInteger(obj)].values.Length - 1;
@@ -3913,6 +4376,7 @@ namespace Lethargy
                             int integer = Conversions.ToInteger(this.@struct[Conversions.ToInteger(obj)].values[j].data);
                             binaryWriter.Write(integer);
                         }
+
                         else
                         {
                             if (Operators.CompareString(str, "short", false) == 0 || Operators.CompareString(str, "id16", false) == 0)
@@ -3920,6 +4384,7 @@ namespace Lethargy
                                 short num2 = Conversions.ToShort(this.@struct[Conversions.ToInteger(obj)].values[j].data);
                                 binaryWriter.Write(num2);
                             }
+
                             else
                             {
                                 if (Operators.CompareString(str, "bitmask32", false) == 0)
@@ -3927,8 +4392,10 @@ namespace Lethargy
                                     int integer1 = Conversions.ToInteger(NewLateBinding.LateGet(this.@struct[Conversions.ToInteger(obj)].values[j].data, null, "ToInt", new object[0], null, null, null));
                                     binaryWriter.Write(integer1);
                                 }
+
                             }
                         }
+
                     }
                     else
                     {
@@ -3948,10 +4415,12 @@ namespace Lethargy
                                 {
                                     num4 = (int)Conversions.ChangeType(RuntimeHelpers.GetObjectValue(objArray1[0]), typeof(int));
                                 }
+
                                 if (obj1 == null)
                                 {
                                     goto Label1;
                                 }
+
                                 BinaryWriter binaryWriter1 = binaryWriter;
                                 object obj2 = null;
                                 string str1 = "Write";
@@ -3969,6 +4438,7 @@ namespace Lethargy
                                 {
                                     num4 = (int)Conversions.ChangeType(RuntimeHelpers.GetObjectValue(objArray[0]), typeof(int));
                                 }
+
                                 objectValue1[num5] = RuntimeHelpers.GetObjectValue(obj4);
                                 object[] objArray3 = objArray2;
                                 bool[] flagArray1 = new bool[1];
@@ -3982,27 +4452,33 @@ namespace Lethargy
                                     NewLateBinding.LateSetComplex(obj3, null, "Chars", objectValue2, null, null, true, false);
                                     goto Label0;
                                 }
+
                                 else
                                 {
                                     goto Label0;
                                 }
+
                             }
                         Label1:
                             binaryWriter.Write(num3);
                         Label0:
                             num4++;
                         }
+
                         while (num4 <= 31);
                     }
+
                 }
                 else
                 {
                     float single = Conversions.ToSingle(this.@struct[Conversions.ToInteger(obj)].values[j].data);
                     binaryWriter.Write(single);
                 }
+
             }
             binaryWriter.Close();
         }
+
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -4017,16 +4493,19 @@ namespace Lethargy
                 {
                     dep = true;
                 }
+
                 this.cbClass.SelectedItem = text;
                 this.AddNames(text, dep);
                 this.cbName.SelectedItem = selectedItem;
                 this.btnSwap.Enabled = true;
             }
+
             catch (Exception expr_B0)
             {
                 //ProjectData.SetProjectError(expr_B0);
                 //ProjectData.ClearProjectError();
             }
+
         }
         public void AddNames(string class1, bool dep)
         {
@@ -4039,12 +4518,15 @@ namespace Lethargy
                 {
                     this.cbName.Items.Add(this.tv.Nodes[class1].Nodes[i].Text);
                 }
+
                 if (dep)
                 {
                     this.cbName.Items.Add("Nulled Out");
                 }
+
                 this.cbName.SelectedIndex = 0;
             }
+
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -4059,11 +4541,13 @@ namespace Lethargy
                 haloTag.MetaOffset = num;
                 num += this.MAP.Magic;
             }
+
             binaryWriter.BaseStream.Position = (long)checked(haloTag.Offset + 20);
             binaryWriter.Write(num);
             this.TagsCache[haloTag.LoadOrder] = haloTag;
             binaryWriter.Close();
         }
+
         private void OpenMapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -4073,19 +4557,23 @@ namespace Lethargy
             {
                 this.OpenMap(openFileDialog.FileName);
             }
+
         }
         private void ExitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void AboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             //MyProject.Forms.About1.Show();
         }
+
         private void cbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.AddNames(this.cbClass.SelectedItem.ToString(), false);
         }
+
         private void btnSwap_Click(object sender, EventArgs e)
         {
             BinaryWriter binaryWriter = new BinaryWriter(new FileStream(this.MAP.Path, FileMode.Open, FileAccess.Write));
@@ -4104,6 +4592,7 @@ namespace Lethargy
                         this.dgv.SelectedRows[i].Cells[0].Value = this.cbClass.SelectedItem.ToString();
                         this.dgv.SelectedRows[i].Cells[1].Value = this.cbName.SelectedItem.ToString();
                     }
+
                 }
                 else
                 {
@@ -4118,10 +4607,12 @@ namespace Lethargy
                         this.dgv.SelectedRows[j].Cells[0].Value = haloTag.Class1;
                         this.dgv.SelectedRows[j].Cells[1].Value = haloTag.Name;
                     }
+
                 }
                 binaryWriter.Close();
                 Interaction.MsgBox("Swapping done", MsgBoxStyle.Information, "Kablam.");
             }
+
         }
         private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -4134,11 +4625,13 @@ namespace Lethargy
                 this.tv.Nodes[text].Expand();
                 this.tv.SelectedNode = this.tv.Nodes[text].Nodes[text + "-" + str];
             }
+
             catch (Exception expr_9A)
             {
                 //ProjectData.SetProjectError(expr_9A);
                 //ProjectData.ClearProjectError();
             }
+
         }
         private void CloseMap()
         {
@@ -4164,10 +4657,12 @@ namespace Lethargy
             this.FindTagByIndexOrderToolStripMenuItem.Enabled = false;
             this.ShowTagsOrderToolStripMenuItem.Enabled = false;
         }
+
         private void CloseMapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.CloseMap();
         }
+
         private void clearBoxes()
         {
             int arg_0F_0 = 0;
@@ -4180,6 +4675,7 @@ namespace Lethargy
                     {
                         this.Controls[i].Text = "";
                     }
+
                     else
                     {
                         int arg_5A_0 = 0;
@@ -4190,10 +4686,13 @@ namespace Lethargy
                             {
                                 this.Controls[i].Controls[j].Text = "";
                             }
+
                         }
                     }
+
                 }
             }
+
         }
         public void Insert(int StartOffset, int Size)
         {
@@ -4216,11 +4715,13 @@ namespace Lethargy
                     binaryWriter.BaseStream.Position = unchecked((long)checked(StartOffset + i));
                     binaryWriter.Write(value);
                 }
+
             }
             binaryWriter.BaseStream.Position = (long)checked(StartOffset + Size);
             binaryWriter.Write(buffer, 0, num);
             binaryWriter.Close();
         }
+
         public void AddTag(string metapath, string xmlpath)
         {
             BinaryReader binaryReader = new BinaryReader(new FileStream(this.MAP.Path, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite));
@@ -4238,20 +4739,24 @@ namespace Lethargy
                     this.Status.Text = "Importing " + text;
                     this.StatusStrip1.Refresh();
                 }
+
                 else
                 {
                     if (name.Equals("MetaSize"))
                     {
                         value = Conversions.ToString(xmlTextReader.ReadElementContentAsInt());
                     }
+
                     else
                     {
                         if (name.Equals("Tag"))
                         {
                             text2 = xmlTextReader.ReadElementContentAsString();
                         }
+
                     }
                 }
+
             }
             int num = Strings.Len(text);
             char[] array;
@@ -4268,6 +4773,7 @@ namespace Lethargy
                         binaryWriter.BaseStream.Position = unchecked((long)checked(haloTag.Offset + 16));
                         binaryWriter.Write(Convert.ToInt32(haloTag.NameOffset + this.MAP.Magic + 32));
                     }
+
                     else
                     {
                         binaryWriter.BaseStream.Position = unchecked((long)checked(haloTag.Offset + 20));
@@ -4275,6 +4781,7 @@ namespace Lethargy
                         binaryWriter.BaseStream.Position = unchecked((long)checked(haloTag.Offset + 16));
                         binaryWriter.Write(Convert.ToInt32(haloTag.NameOffset + 32 + this.MAP.Magic));
                     }
+
                 }
                 int num3 = this.TagsCache[this.MAP.TagCount - 1].Offset + 32;
                 int value2 = this.TagsCache[this.MAP.TagCount - 1].ID + 65537;
@@ -4290,18 +4797,22 @@ namespace Lethargy
                 {
                     binaryWriter.Write(-1);
                 }
+
                 else
                 {
                     binaryWriter.Write(text4.ToCharArray());
                 }
+
                 if (text5.Equals(""))
                 {
                     binaryWriter.Write(-1);
                 }
+
                 else
                 {
                     binaryWriter.Write(text5.ToCharArray());
                 }
+
                 binaryWriter.Write(value2);
                 binaryWriter.Write(num4 + this.MAP.Magic);
                 binaryWriter.Write(value3);
@@ -4321,6 +4832,7 @@ namespace Lethargy
                 binaryWriter.Write(Convert.ToInt32(this.MAP.TagCount + 1));
                 binaryWriter.BaseStream.Position = 20L;
             }
+
             binaryWriter.Write(Convert.ToInt32((double)this.MAP.TotalMetaSize + Conversions.ToDouble(value)));
             xmlTextReader.Close();
             binaryReader.Close();
@@ -4329,6 +4841,7 @@ namespace Lethargy
             this.Status.Text = "Done importing " + new string(array);
             Interaction.MsgBox("Butchering is complete", MsgBoxStyle.OkOnly, null);
         }
+
         private void InsertToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -4341,6 +4854,7 @@ namespace Lethargy
                 this.AddTag(fileName, xmlpath);
                 this.Cursor = Cursors.Default;
             }
+
         }
         private void FindTagByIndexOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -4351,6 +4865,7 @@ namespace Lethargy
                 Interaction.MsgBox("Invalid input, value must be numeric.", MsgBoxStyle.OkOnly, null);
                 return;
             }
+
             checked
             {
                 if (flag == Conversions.ToDouble(text) > (double)(this.MAP.TagCount - 1))
@@ -4358,11 +4873,13 @@ namespace Lethargy
                     Interaction.MsgBox("Invalid input, must be less than the tags count of the map minus one.", MsgBoxStyle.OkOnly, null);
                     return;
                 }
+
                 if (flag == Conversions.ToDouble(text) < 0.0)
                 {
                     Interaction.MsgBox("Invalid input, must be greater than or equal to zero.", MsgBoxStyle.OkOnly, null);
                     return;
                 }
+
                 int arg_8C_0 = 0;
                 int num = this.MAP.TagCount - 1;
                 for (int i = arg_8C_0; i <= num; i++)
@@ -4372,8 +4889,10 @@ namespace Lethargy
                     {
                         this.tv.SelectedNode = this.tv.Nodes[haloTag.Class1].Nodes[haloTag.Class1 + "-" + haloTag.Name];
                     }
+
                 }
             }
+
         }
         private void ShowTagsOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -4410,9 +4929,11 @@ namespace Lethargy
                     });
                     listBox.Items.Add(item);
                 }
+
                 listBox.SelectedIndex = 0;
                 form.Show();
             }
+
         }
         public void DoubleClickLB(object sender, EventArgs e)
         {
@@ -4421,6 +4942,7 @@ namespace Lethargy
             HaloTag haloTag = this.TagsCache[selectedIndex];
             this.tv.SelectedNode = this.tv.Nodes[haloTag.Class1].Nodes[haloTag.Class1 + "-" + haloTag.Name];
         }
+
         private void dgv_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -4435,16 +4957,19 @@ namespace Lethargy
                 {
                     dep = true;
                 }
+
                 this.cbClass.SelectedItem = text;
                 this.AddNames(text, dep);
                 this.cbName.SelectedItem = selectedItem;
                 this.btnSwap.Enabled = true;
             }
+
             catch (Exception expr_CB)
             {
                 //ProjectData.SetProjectError(expr_CB);
                 //ProjectData.ClearProjectError();
             }
+
         }
         private void InsertBlankDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -4455,6 +4980,7 @@ namespace Lethargy
                 this.Insert(startOffset, size);
                 Interaction.MsgBox("Done", MsgBoxStyle.OkOnly, null);
             }
+
             catch (Exception expr_5E)
             {
                 //ProjectData.SetProjectError(expr_5E);
@@ -4462,6 +4988,8 @@ namespace Lethargy
                 MessageBox.Show(ex.Message);
                 //ProjectData.ClearProjectError();
             }
+
         }
     }
+
 }
