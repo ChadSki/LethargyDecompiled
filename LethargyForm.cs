@@ -162,7 +162,7 @@ namespace Lethargy
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
-                TreeViewEventHandler value2 = new TreeViewEventHandler(this.tv_AfterSelect);
+                TreeViewEventHandler value2 = new TreeViewEventHandler(this.tagTree_selectTag);
                 if (this._tagTreeView != null)
                 {
                     this._tagTreeView.AfterSelect -= value2;
@@ -3221,13 +3221,15 @@ namespace Lethargy
             this.Close();
         }
 
-        private void tv_AfterSelect(object sender, TreeViewEventArgs e)
+        private void tagTree_selectTag(object sender, TreeViewEventArgs e)
         {
+            // If we selected a tag class, nobody cares
             if (Operators.ConditionalCompareObjectEqual(this.IsClass(this.TagTreeView.SelectedNode.Name), true, false))
             {
                 return;
             }
 
+            // Interesting, didn't know this existed.
             if (this.TagTreeView.SelectedNode.ForeColor == Color.Gray)
             {
                 Interaction.MsgBox("Cannot edit indexed CE tags.", MsgBoxStyle.OkOnly, null);
@@ -3249,11 +3251,11 @@ namespace Lethargy
             this.txtIndexOrder.Text = Conversions.ToString(haloTag.LoadOrder);
             this.dgv.Rows.Clear();
             BinaryReader binaryReader = new BinaryReader(new FileStream(this.MAP.Path, FileMode.Open, FileAccess.Read));
-            int arg_17F_0 = 0;
             checked
             {
+                // Read 4 bytes at a time
                 int num = haloTag.MetaSize - 4;
-                for (int i = arg_17F_0; i <= num; i += 4)
+                for (int i = 0; i <= num; i += 4)
                 {
                     binaryReader.BaseStream.Position = unchecked((long)checked(haloTag.MetaOffset + i));
                     if (binaryReader.BaseStream.Position == binaryReader.BaseStream.Length)
@@ -3261,43 +3263,47 @@ namespace Lethargy
                         break;
                     }
 
-                    int num2 = binaryReader.ReadInt32();
-                    if (this.IDhash.ContainsKey(num2))
+                    // Check to see if we've found a reference
+                    int maybeIdent = binaryReader.ReadInt32();
+                    if (this.IDhash.ContainsKey(maybeIdent))
                     {
-                        HaloTag haloTag2 = this.TagsCache[Convert.ToInt32(this.IDhash[num2])];
+                        HaloTag referencedTag = this.TagsCache[Convert.ToInt32(this.IDhash[maybeIdent])];
                         try
                         {
                             binaryReader.BaseStream.Position = unchecked((long)checked(haloTag.MetaOffset + i - 12));
                             string text = new string(binaryReader.ReadChars(4));
                             text = this.ReverseString(text);
+
+                            // Dependency
                             if (Operators.ConditionalCompareObjectEqual(this.IsClass(text), true, false))
                             {
                                 this.dgv.Rows.Add(new object[]
                                 {
-                                    haloTag2.Class1,
-                                    haloTag2.Name,
+                                    referencedTag.Class1,
+                                    referencedTag.Name,
                                     "DEP"
                                 });
                             }
 
+                            // Lone ID
                             else
                             {
                                 this.dgv.Rows.Add(new object[]
                                 {
-                                    haloTag2.Class1,
-                                    haloTag2.Name,
+                                    referencedTag.Class1,
+                                    referencedTag.Name,
                                     "LID"
                                 });
                             }
 
                         }
-                        catch (Exception expr_2AF)
+                        catch (Exception)
                         {
-                            //ProjectData.SetProjectError(expr_2AF);
+                            //ProjectData.SetProjectError(ex);
                             this.dgv.Rows.Add(new object[]
                             {
-                                haloTag2.Class1,
-                                haloTag2.Name,
+                                referencedTag.Class1,
+                                referencedTag.Name,
                                 "LID"
                             });
                             //ProjectData.ClearProjectError();
@@ -3306,20 +3312,21 @@ namespace Lethargy
                         this.dgv.Rows[this.dgv.Rows.Count - 1].Tag = haloTag.MetaOffset + i;
                     }
 
+                    // There still may be a chance!  See if we've found a dependency that's been... nulled out, I think
                     else
                     {
-                        if (num2 == -1)
+                        if (maybeIdent == -1)
                         {
                             try
                             {
                                 binaryReader.BaseStream.Position = unchecked((long)checked(haloTag.MetaOffset + i - 12));
-                                string text = new string(binaryReader.ReadChars(4));
-                                text = this.ReverseString(text);
-                                if (Operators.ConditionalCompareObjectEqual(this.IsClass(text), true, false))
+                                string tagClass = new string(binaryReader.ReadChars(4));
+                                tagClass = this.ReverseString(tagClass);
+                                if (Operators.ConditionalCompareObjectEqual(this.IsClass(tagClass), true, false))
                                 {
                                     this.dgv.Rows.Add(new object[]
                                     {
-                                        text,
+                                        tagClass,
                                         "Nulled Out",
                                         "DEP"
                                     });
@@ -3327,21 +3334,24 @@ namespace Lethargy
                                 }
 
                             }
-                            catch (Exception expr_3E4)
+                            catch (Exception)
                             {
-                                //ProjectData.SetProjectError(expr_3E4);
+                                //ProjectData.SetProjectError(ex);
                                 //ProjectData.ClearProjectError();
                             }
-
                         }
                     }
-
                 }
+                // Done looking for references
                 binaryReader.Close();
+
+                // What, no plugins for sbsp?
                 if (!(haloTag.Class1.Equals("sbsp")))
                 {
-                    XMLMain xMLMain = new XMLMain(haloTag);
-                    xMLMain.Tag = haloTag;
+                    XMLMain xmlMain = new XMLMain(haloTag);
+                    xmlMain.Tag = haloTag;
+
+                    // Attempt to load the plugin
                     this.pluginLoaded = true;
                     this.LoadPlugin(haloTag.Class1);
                     if (this.pluginLoaded)
