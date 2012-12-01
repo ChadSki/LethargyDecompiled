@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using System.Xml;
 namespace Lethargy
 {
-    public class Form1 : Form
+    public class LethargyForm : Form
     {
         private IContainer components;
         [AccessedThroughProperty("tv")]
@@ -1200,7 +1200,7 @@ namespace Lethargy
             }
         }
 
-        public Form1()
+        public LethargyForm()
         {
             this.MAP = new HaloMap();
             this.IDhash = new Hashtable();
