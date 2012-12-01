@@ -566,7 +566,7 @@ namespace Lethargy
             }
 
         }
-        internal virtual Label Label1
+        internal virtual Label MapLabel_Magic
         {
             get
             {
@@ -1229,7 +1229,7 @@ namespace Lethargy
             }
 
         }
-        [DebuggerStepThrough]
+
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle = new DataGridViewCellStyle();
@@ -1264,7 +1264,7 @@ namespace Lethargy
             this.txtIndexOffset = new TextBox();
             this.txtTagCount = new TextBox();
             this.Label2 = new Label();
-            this.Label1 = new Label();
+            this.MapLabel_Magic = new Label();
             this.txtMagic = new TextBox();
             this.GroupBox3 = new GroupBox();
             this.btnExtract = new Button();
@@ -1562,7 +1562,7 @@ namespace Lethargy
             this.GroupBox1.Controls.Add(this.txtIndexOffset);
             this.GroupBox1.Controls.Add(this.txtTagCount);
             this.GroupBox1.Controls.Add(this.Label2);
-            this.GroupBox1.Controls.Add(this.Label1);
+            this.GroupBox1.Controls.Add(this.MapLabel_Magic);
             this.GroupBox1.Controls.Add(this.txtMagic);
             this.GroupBox1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.GroupBox1.ForeColor = SystemColors.ControlText;
@@ -1642,28 +1642,23 @@ namespace Lethargy
             this.Label2.TabIndex = 2;
             this.Label2.Text = "Tag Count:";
             this.Label2.TextAlign = ContentAlignment.MiddleLeft;
-            this.Label1.BorderStyle = BorderStyle.Fixed3D;
-            this.Label1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Control arg_13ED_0 = this.Label1;
-            location = new Point(6, 16);
-            arg_13ED_0.Location = location;
-            this.Label1.Name = "Label1";
-            Control arg_1415_0 = this.Label1;
-            size = new Size(89, 20);
-            arg_1415_0.Size = size;
-            this.Label1.TabIndex = 1;
-            this.Label1.Text = "Magic:";
-            this.Label1.TextAlign = ContentAlignment.MiddleLeft;
+            //
+            this.MapLabel_Magic.BorderStyle = BorderStyle.Fixed3D;
+            this.MapLabel_Magic.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.MapLabel_Magic.Location = new Point(6, 16);
+            this.MapLabel_Magic.Name = "Label1";
+            this.MapLabel_Magic.Size = new Size(89, 20);
+            this.MapLabel_Magic.TabIndex = 1;
+            this.MapLabel_Magic.Text = "Magic:";
+            this.MapLabel_Magic.TextAlign = ContentAlignment.MiddleLeft;
+            //
             this.txtMagic.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Control arg_1472_0 = this.txtMagic;
-            location = new Point(101, 16);
-            arg_1472_0.Location = location;
+            this.txtMagic.Location = new Point(101, 16);
             this.txtMagic.Name = "txtMagic";
             this.txtMagic.ReadOnly = true;
-            Control arg_14A6_0 = this.txtMagic;
-            size = new Size(94, 20);
-            arg_14A6_0.Size = size;
+            this.txtMagic.Size = new Size(94, 20);
             this.txtMagic.TabIndex = 0;
+            //
             this.GroupBox3.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left);
             this.GroupBox3.Controls.Add(this.btnExtract);
             Control arg_14EE_0 = this.GroupBox3;
