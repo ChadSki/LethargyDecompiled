@@ -731,7 +731,7 @@ namespace Lethargy
             }
 
         }
-        internal virtual DataGridView dgv
+        internal virtual DataGridView DependenciesDataGrid
         {
             get
             {
@@ -1279,7 +1279,7 @@ namespace Lethargy
             this.btnSwap = new Button();
             this.cbName = new ComboBox();
             this.cbClass = new ComboBox();
-            this.dgv = new DataGridView();
+            this.DependenciesDataGrid = new DataGridView();
             this.DepClass = new DataGridViewTextBoxColumn();
             this.DepName = new DataGridViewTextBoxColumn();
             this.DepType = new DataGridViewTextBoxColumn();
@@ -1307,7 +1307,7 @@ namespace Lethargy
             this.MapView.SuspendLayout();
             this.Tabs.SuspendLayout();
             this.DepsTab.SuspendLayout();
-            ((ISupportInitialize)this.dgv).BeginInit();
+            ((ISupportInitialize)this.DependenciesDataGrid).BeginInit();
             this.MenuStrip1.SuspendLayout();
             this.SuspendLayout();
             this.TagTreeView.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
@@ -1763,7 +1763,7 @@ namespace Lethargy
             this.DepsTab.Controls.Add(this.btnSwap);
             this.DepsTab.Controls.Add(this.cbName);
             this.DepsTab.Controls.Add(this.cbClass);
-            this.DepsTab.Controls.Add(this.dgv);
+            this.DepsTab.Controls.Add(this.DependenciesDataGrid);
             TabPage arg_19B4_0 = this.DepsTab;
             location = new Point(4, 22);
             arg_19B4_0.Location = location;
@@ -1811,13 +1811,13 @@ namespace Lethargy
             arg_1B85_0.Size = size;
             this.cbClass.Sorted = true;
             this.cbClass.TabIndex = 1;
-            this.dgv.AllowUserToAddRows = false;
-            this.dgv.AllowUserToDeleteRows = false;
-            this.dgv.AllowUserToResizeColumns = false;
-            this.dgv.AllowUserToResizeRows = false;
-            this.dgv.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
-            this.dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgv.BackgroundColor = SystemColors.Control;
+            this.DependenciesDataGrid.AllowUserToAddRows = false;
+            this.DependenciesDataGrid.AllowUserToDeleteRows = false;
+            this.DependenciesDataGrid.AllowUserToResizeColumns = false;
+            this.DependenciesDataGrid.AllowUserToResizeRows = false;
+            this.DependenciesDataGrid.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
+            this.DependenciesDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.DependenciesDataGrid.BackgroundColor = SystemColors.Control;
             dataGridViewCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle.BackColor = SystemColors.Control;
             dataGridViewCellStyle.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1825,9 +1825,9 @@ namespace Lethargy
             dataGridViewCellStyle.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle.WrapMode = DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle;
-            this.dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new DataGridViewColumn[]
+            this.DependenciesDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle;
+            this.DependenciesDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DependenciesDataGrid.Columns.AddRange(new DataGridViewColumn[]
             {
                 this.DepClass,
                 this.DepName,
@@ -1840,12 +1840,12 @@ namespace Lethargy
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle2;
-            Control arg_1D0E_0 = this.dgv;
+            this.DependenciesDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            Control arg_1D0E_0 = this.DependenciesDataGrid;
             location = new Point(-2, 1);
             arg_1D0E_0.Location = location;
-            this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
+            this.DependenciesDataGrid.Name = "dgv";
+            this.DependenciesDataGrid.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1853,15 +1853,15 @@ namespace Lethargy
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv.RowHeadersVisible = false;
-            this.dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv.ScrollBars = ScrollBars.Vertical;
-            this.dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            Control arg_1DD7_0 = this.dgv;
+            this.DependenciesDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DependenciesDataGrid.RowHeadersVisible = false;
+            this.DependenciesDataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.DependenciesDataGrid.ScrollBars = ScrollBars.Vertical;
+            this.DependenciesDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            Control arg_1DD7_0 = this.DependenciesDataGrid;
             size = new Size(368, 422);
             arg_1DD7_0.Size = size;
-            this.dgv.TabIndex = 0;
+            this.DependenciesDataGrid.TabIndex = 0;
             this.DepClass.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             this.DepClass.FillWeight = 10f;
             this.DepClass.Frozen = true;
@@ -2016,7 +2016,7 @@ namespace Lethargy
             this.MapView.ResumeLayout(false);
             this.Tabs.ResumeLayout(false);
             this.DepsTab.ResumeLayout(false);
-            ((ISupportInitialize)this.dgv).EndInit();
+            ((ISupportInitialize)this.DependenciesDataGrid).EndInit();
             this.MenuStrip1.ResumeLayout(false);
             this.MenuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -3244,7 +3244,7 @@ namespace Lethargy
             this.cb3.SelectedItem = haloTag.Class3;
             this.txtOffset.Text = Conversion.Hex(haloTag.Offset);
             this.txtIndexOrder.Text = Conversions.ToString(haloTag.LoadOrder);
-            this.dgv.Rows.Clear();
+            this.DependenciesDataGrid.Rows.Clear();
             BinaryReader binaryReader = new BinaryReader(new FileStream(this.MAP.Path, FileMode.Open, FileAccess.Read));
             checked
             {
@@ -3272,7 +3272,7 @@ namespace Lethargy
                             // Dependency
                             if (Operators.ConditionalCompareObjectEqual(this.IsClass(text), true, false))
                             {
-                                this.dgv.Rows.Add(new object[]
+                                this.DependenciesDataGrid.Rows.Add(new object[]
                                 {
                                     referencedTag.Class1,
                                     referencedTag.Name,
@@ -3283,7 +3283,7 @@ namespace Lethargy
                             // Lone ID
                             else
                             {
-                                this.dgv.Rows.Add(new object[]
+                                this.DependenciesDataGrid.Rows.Add(new object[]
                                 {
                                     referencedTag.Class1,
                                     referencedTag.Name,
@@ -3295,7 +3295,7 @@ namespace Lethargy
                         catch (Exception)
                         {
                             //ProjectData.SetProjectError(ex);
-                            this.dgv.Rows.Add(new object[]
+                            this.DependenciesDataGrid.Rows.Add(new object[]
                             {
                                 referencedTag.Class1,
                                 referencedTag.Name,
@@ -3304,7 +3304,7 @@ namespace Lethargy
                             //ProjectData.ClearProjectError();
                         }
 
-                        this.dgv.Rows[this.dgv.Rows.Count - 1].Tag = haloTag.MetaOffset + i;
+                        this.DependenciesDataGrid.Rows[this.DependenciesDataGrid.Rows.Count - 1].Tag = haloTag.MetaOffset + i;
                     }
 
                     // There still may be a chance!  See if we've found a dependency that's been... nulled out, I think
@@ -3319,13 +3319,13 @@ namespace Lethargy
                                 tagClass = this.ReverseString(tagClass);
                                 if (Operators.ConditionalCompareObjectEqual(this.IsClass(tagClass), true, false))
                                 {
-                                    this.dgv.Rows.Add(new object[]
+                                    this.DependenciesDataGrid.Rows.Add(new object[]
                                     {
                                         tagClass,
                                         "Nulled Out",
                                         "DEP"
                                     });
-                                    this.dgv.Rows[this.dgv.Rows.Count - 1].Tag = haloTag.MetaOffset + i;
+                                    this.DependenciesDataGrid.Rows[this.DependenciesDataGrid.Rows.Count - 1].Tag = haloTag.MetaOffset + i;
                                 }
 
                             }
@@ -4493,7 +4493,7 @@ namespace Lethargy
         {
             try
             {
-                DataGridViewRow dataGridViewRow = this.dgv.Rows[e.RowIndex];
+                DataGridViewRow dataGridViewRow = this.DependenciesDataGrid.Rows[e.RowIndex];
                 int num = Convert.ToInt32(dataGridViewRow.Tag);
                 string text = Conversions.ToString(dataGridViewRow.Cells[0].Value);
                 string selectedItem = Conversions.ToString(dataGridViewRow.Cells[1].Value);
@@ -4592,15 +4592,15 @@ namespace Lethargy
                 if (Operators.ConditionalCompareObjectEqual(this.cbName.SelectedItem, "Nulled Out", false))
                 {
                     int arg_48_0 = 0;
-                    int num = this.dgv.SelectedRows.Count - 1;
+                    int num = this.DependenciesDataGrid.SelectedRows.Count - 1;
                     for (int i = arg_48_0; i <= num; i++)
                     {
-                        int num2 = Convert.ToInt32(this.dgv.SelectedRows[i].Tag);
+                        int num2 = Convert.ToInt32(this.DependenciesDataGrid.SelectedRows[i].Tag);
                         binaryWriter.BaseStream.Position = unchecked((long)num2);
                         int value = -1;
                         binaryWriter.Write(value);
-                        this.dgv.SelectedRows[i].Cells[0].Value = this.cbClass.SelectedItem.ToString();
-                        this.dgv.SelectedRows[i].Cells[1].Value = this.cbName.SelectedItem.ToString();
+                        this.DependenciesDataGrid.SelectedRows[i].Cells[0].Value = this.cbClass.SelectedItem.ToString();
+                        this.DependenciesDataGrid.SelectedRows[i].Cells[1].Value = this.cbName.SelectedItem.ToString();
                     }
 
                 }
@@ -4608,14 +4608,14 @@ namespace Lethargy
                 {
                     HaloTag haloTag = this.TagsCache[Convert.ToInt32(this.TagTreeView.Nodes[this.cbClass.SelectedItem.ToString()].Nodes[this.cbClass.SelectedItem.ToString() + "-" + this.cbName.SelectedItem.ToString()].Tag)];
                     int arg_16F_0 = 0;
-                    int num3 = this.dgv.SelectedRows.Count - 1;
+                    int num3 = this.DependenciesDataGrid.SelectedRows.Count - 1;
                     for (int j = arg_16F_0; j <= num3; j++)
                     {
-                        int num4 = Convert.ToInt32(this.dgv.SelectedRows[j].Tag);
+                        int num4 = Convert.ToInt32(this.DependenciesDataGrid.SelectedRows[j].Tag);
                         binaryWriter.BaseStream.Position = unchecked((long)num4);
                         binaryWriter.Write(haloTag.ID);
-                        this.dgv.SelectedRows[j].Cells[0].Value = haloTag.Class1;
-                        this.dgv.SelectedRows[j].Cells[1].Value = haloTag.Name;
+                        this.DependenciesDataGrid.SelectedRows[j].Cells[0].Value = haloTag.Class1;
+                        this.DependenciesDataGrid.SelectedRows[j].Cells[1].Value = haloTag.Name;
                     }
 
                 }
@@ -4629,7 +4629,7 @@ namespace Lethargy
             try
             {
                 this.TagTreeView.CollapseAll();
-                DataGridViewRow dataGridViewRow = this.dgv.Rows[e.RowIndex];
+                DataGridViewRow dataGridViewRow = this.DependenciesDataGrid.Rows[e.RowIndex];
                 string text = Conversions.ToString(dataGridViewRow.Cells[0].Value);
                 string str = Conversions.ToString(dataGridViewRow.Cells[1].Value);
                 this.TagTreeView.Nodes[text].Expand();
@@ -4647,7 +4647,7 @@ namespace Lethargy
         {
             this.clearBoxes();
             this.TagTreeView.Nodes.Clear();
-            this.dgv.Rows.Clear();
+            this.DependenciesDataGrid.Rows.Clear();
             this.MetaTab.Controls.Clear();
             this.cbClass.Items.Clear();
             this.cbName.Items.Clear();
@@ -4957,7 +4957,7 @@ namespace Lethargy
         {
             try
             {
-                DataGridViewRow dataGridViewRow = this.dgv.Rows[this.dgv.SelectedRows[0].Cells[0].RowIndex];
+                DataGridViewRow dataGridViewRow = this.DependenciesDataGrid.Rows[this.DependenciesDataGrid.SelectedRows[0].Cells[0].RowIndex];
                 int num = Convert.ToInt32(dataGridViewRow.Tag);
                 string text = Conversions.ToString(dataGridViewRow.Cells[0].Value);
                 string selectedItem = Conversions.ToString(dataGridViewRow.Cells[1].Value);
