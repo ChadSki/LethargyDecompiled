@@ -731,6 +731,7 @@ namespace Lethargy
             }
 
         }
+
         internal virtual DataGridView DependenciesDataGrid
         {
             get
@@ -741,22 +742,20 @@ namespace Lethargy
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
-                DataGridViewCellEventHandler value2 = new DataGridViewCellEventHandler(this.dgv_CellClick);
-                DataGridViewCellEventHandler value3 = new DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
-                EventHandler value4 = new EventHandler(this.dgv_SelectionChanged);
                 if (this._dgv != null)
                 {
-                    this._dgv.CellClick -= value2;
-                    this._dgv.CellDoubleClick -= value3;
-                    this._dgv.SelectionChanged -= value4;
+                    this._dgv.CellClick -= dgv_CellClick;
+                    this._dgv.CellDoubleClick -= dgv_CellDoubleClick;
+                    this._dgv.SelectionChanged -= dgv_SelectionChanged;
                 }
 
                 this._dgv = value;
+
                 if (this._dgv != null)
                 {
-                    this._dgv.CellClick += value2;
-                    this._dgv.CellDoubleClick += value3;
-                    this._dgv.SelectionChanged += value4;
+                    this._dgv.CellClick += dgv_CellClick;
+                    this._dgv.CellDoubleClick += dgv_CellDoubleClick;
+                    this._dgv.SelectionChanged += dgv_SelectionChanged;
                 }
 
             }
