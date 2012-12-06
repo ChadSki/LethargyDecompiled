@@ -3223,7 +3223,7 @@ namespace Lethargy
                 return;
             }
 
-            // Interesting, didn't know this existed.
+            // Interesting, didn't know this functionality existed.
             if (this.TagTreeView.SelectedNode.ForeColor == Color.Gray)
             {
                 Interaction.MsgBox("Cannot edit indexed CE tags.", MsgBoxStyle.OkOnly, null);
@@ -3526,7 +3526,7 @@ namespace Lethargy
         public void LoadPlugin(string PrimaryTagClass)
         {
             string text = Application.StartupPath + "\\Plugins\\" + PrimaryTagClass + ".xml";
-            XmlTextReader xmlTextReader = new XmlTextReader(text + ".xml");
+            XmlTextReader xmlTextReader = new XmlTextReader(text);
             XmlDocument xmlDocument = new XmlDocument();
             checked
             {
