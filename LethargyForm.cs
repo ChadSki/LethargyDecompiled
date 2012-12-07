@@ -4198,79 +4198,51 @@ namespace Lethargy
         public void ReadTag(int offset)
         {
             BinaryReader binaryReader = new BinaryReader(new FileStream(this.MAP.Path, FileMode.Open, FileAccess.Read));
-            int arg_2F_0 = 0;
-            checked
+
+            for (int i = 0; i < this.@struct[0].values.Length; i++)
             {
-                int num = this.@struct[0].values.Length - 1;
-                for (int i = arg_2F_0; i <= num; i++)
+                binaryReader.BaseStream.Seek(unchecked((long)checked(offset + this.@struct[0].values[i].offset)), SeekOrigin.Begin);
+                string type = this.@struct[0].values[i].type;
+                if (type.Equals("float"))
                 {
-                    binaryReader.BaseStream.Seek(unchecked((long)checked(offset + this.@struct[0].values[i].offset)), SeekOrigin.Begin);
-                    string type = this.@struct[0].values[i].type;
-                    if (type.Equals("float"))
-                    {
-                        this.@struct[0].values[i].data = binaryReader.ReadSingle();
-                    }
-
-                    else
-                    {
-                        if (type.Equals("string32"))
-                        {
-                            this.@struct[0].values[i].data = binaryReader.ReadString();
-                            NewLateBinding.LateCall(this.@struct[0].values[i].data, null, "PadRight", new object[]
-                            {
-                                32
-                            }, null, null, null, true);
-                        }
-
-                        else
-                        {
-                            if (type.Equals("id32"))
-                            {
-                                this.@struct[0].values[i].data = binaryReader.ReadInt32();
-                            }
-
-                            else
-                            {
-                                if (type.Equals("integer"))
-                                {
-                                    this.@struct[0].values[i].data = binaryReader.ReadInt32();
-                                }
-
-                                else
-                                {
-                                    if (type.Equals("short") || type.Equals("id16"))
-                                    {
-                                        this.@struct[0].values[i].data = binaryReader.ReadInt16();
-                                    }
-
-                                    else
-                                    {
-                                        if (type.Equals("reflexive"))
-                                        {
-                                            this.@struct[0].values[i].count = binaryReader.ReadInt32();
-                                            this.@struct[0].values[i].data = binaryReader.ReadInt32();
-                                        }
-
-                                        else
-                                        {
-                                            if (type.Equals("bitmask32"))
-                                            {
-                                                this.@struct[0].values[i].data = new BitMask(binaryReader.ReadInt32());
-                                            }
-
-                                        }
-                                    }
-
-                                }
-                            }
-
-                        }
-                    }
-
+                    this.@struct[0].values[i].data = binaryReader.ReadSingle();
                 }
-                binaryReader.Close();
-            }
 
+                else if (type.Equals("string32"))
+                {
+                    this.@struct[0].values[i].data = binaryReader.ReadString();
+                    NewLateBinding.LateCall(this.@struct[0].values[i].data, null, "PadRight", new object[]
+                    {
+                        32
+                    }, null, null, null, true);
+                }
+                else if (type.Equals("id32"))
+                {
+                    this.@struct[0].values[i].data = binaryReader.ReadInt32();
+                }
+
+                else if (type.Equals("integer"))
+                {
+                    this.@struct[0].values[i].data = binaryReader.ReadInt32();
+                }
+
+                else if (type.Equals("short") || type.Equals("id16"))
+                {
+                    this.@struct[0].values[i].data = binaryReader.ReadInt16();
+                }
+
+                else if (type.Equals("reflexive"))
+                {
+                    this.@struct[0].values[i].count = binaryReader.ReadInt32();
+                    this.@struct[0].values[i].data = binaryReader.ReadInt32();
+                }
+
+                else if (type.Equals("bitmask32"))
+                {
+                    this.@struct[0].values[i].data = new BitMask(binaryReader.ReadInt32());
+                }
+            }
+            binaryReader.Close();
         }
         public void ReadReflexive(string type, int num)
         {
@@ -4520,11 +4492,11 @@ namespace Lethargy
         public void AddNames(string class1, bool dep)
         {
             this.cbName.Items.Clear();
-            int arg_2F_0 = 0;
+            int int0 = 0;
             checked
             {
                 int num = this.TagTreeView.Nodes[class1].Nodes.Count - 1;
-                for (int i = arg_2F_0; i <= num; i++)
+                for (int i = int0; i <= num; i++)
                 {
                     this.cbName.Items.Add(this.TagTreeView.Nodes[class1].Nodes[i].Text);
                 }
