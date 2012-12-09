@@ -3540,16 +3540,16 @@ namespace Lethargy
                     int num = elementsByTagName.Count - 1;
                     for (int i = arg_16F_0; i <= num; i++)
                     {
-                        XmlNodeList[] array = new XmlNodeList[elementsByTagName.Count + 1];
-                        array[i] = elementsByTagName[i].ChildNodes;
-                        this.@struct[i].name = array[i][0].InnerText;
-                        this.@struct[i].size = (int)Math.Round(Conversion.Val(array[i][1].InnerText));
-                        this.@struct[i].values = new XMLMain.VALUE_STRUCT[array[i].Count - 3 + 1];
+                        XmlNodeList[] structChildNodes = new XmlNodeList[elementsByTagName.Count + 1];
+                        structChildNodes[i] = elementsByTagName[i].ChildNodes;
+                        this.@struct[i].name = structChildNodes[i][0].InnerText;
+                        this.@struct[i].size = (int)Math.Round(Conversion.Val(structChildNodes[i][1].InnerText));
+                        this.@struct[i].values = new XMLMain.VALUE_STRUCT[structChildNodes[i].Count - 3 + 1];
                         int arg_212_0 = 0;
-                        int num2 = array[i].Count - 3;
+                        int num2 = structChildNodes[i].Count - 3;
                         for (int j = arg_212_0; j <= num2; j++)
                         {
-                            XmlNodeList childNodes = array[i][j + 2].ChildNodes;
+                            XmlNodeList childNodes = structChildNodes[i][j + 2].ChildNodes;
                             this.@struct[i].values[j].type = childNodes.Item(0).InnerText;
                             this.@struct[i].values[j].offset = (int)Math.Round(Conversion.Val("&H" + Strings.Mid(childNodes[1].InnerText, 3)));
                             this.@struct[i].values[j].name = childNodes[2].InnerText;
