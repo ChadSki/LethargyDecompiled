@@ -3601,7 +3601,7 @@ namespace Lethargy
         public void CreateGUI()
         {
             this.MetaTab.Controls.Clear();
-            int int0 = 0;
+            int num = 0;
             int num2 = 0;
             int arg_25_0 = 0;
             checked
@@ -3620,13 +3620,12 @@ namespace Lethargy
                         Label label = new Label();
                         label.Text = this.@struct[i].name;
                         Control arg_C2_0 = label;
-                        location = new Point(2, int0);
+                        location = new Point(2, num);
                         arg_C2_0.Location = location;
                         label.Width = this.@struct[i].name.Length * 7;
-
                         comboBox.Name = this.@struct[i].name + "ComboBox";
                         Control arg_11F_0 = comboBox;
-                        location = new Point(label.Width + 10, int0);
+                        location = new Point(label.Width + 10, num);
                         arg_11F_0.Location = location;
                         comboBox.SelectedIndexChanged += new EventHandler(this.somethingChanged);
                         comboBox.Click += new EventHandler(this.SetUserDidIt);
@@ -3647,15 +3646,15 @@ namespace Lethargy
 
                             }
                         }
+
+                        num += 25;
                     }
 
                     Control arg_252_0 = groupBox;
-                    location = new Point(2, 25);
+                    location = new Point(2, num);
                     arg_252_0.Location = location;
-
-
-                    int int10 = 10;
-                    int heightSoFar = 15;
+                    int x = 10;
+                    int num6 = 15;
                     int arg_277_0 = 0;
                     int num7 = this.@struct[i].values.Length - 1;
                     j = arg_277_0;
@@ -3692,7 +3691,7 @@ namespace Lethargy
                             groupBox2.Width = this.MetaTab.Width - 20;
                             groupBox2.Height = 20 + (this.@struct[i].values[j].offset_options.Length / 2 + this.@struct[i].values[j].offset_options.Length % 2) * 16;
                             Control arg_5BD_0 = groupBox2;
-                            location = new Point(int10, heightSoFar);
+                            location = new Point(x, num6);
                             arg_5BD_0.Location = location;
                             groupBox2.TabIndex = num2;
                             num2++;
@@ -3739,8 +3738,8 @@ namespace Lethargy
 
                             }
                             groupBox.Controls.Add(groupBox2);
-                            heightSoFar += groupBox2.Height;
-                            int10 = 10;
+                            num6 += groupBox2.Height;
+                            x = 10;
                             num2 += this.@struct[i].values[j].offset_options.Length;
                         }
 
@@ -3756,7 +3755,7 @@ namespace Lethargy
                                 groupBox3.Height = 20 + (this.@struct[i].values[j].offset_options.Length / 2 + this.@struct[i].values[j].offset_options.Length % 2) * 16;
                                 groupBox3.TabIndex = num2;
                                 Control arg_916_0 = groupBox3;
-                                location = new Point(int10, heightSoFar);
+                                location = new Point(x, num6);
                                 arg_916_0.Location = location;
                                 int x2 = 10;
                                 int num8 = 15;
@@ -3827,9 +3826,9 @@ namespace Lethargy
 
                                 }
                                 groupBox.Controls.Add(groupBox3);
-                                heightSoFar += groupBox3.Height;
+                                num6 += groupBox3.Height;
                                 num2 += this.@struct[i].values[j].offset_options.Length;
-                                int10 = 10;
+                                x = 10;
                             }
 
                         }
@@ -3852,29 +3851,29 @@ namespace Lethargy
                         textBox.TabIndex = num2 + 1;
                         label2.AutoSize = true;
                         Control arg_404_0 = label2;
-                        location = new Point(int10, heightSoFar);
-
+                        location = new Point(x, num6);
                         arg_404_0.Location = location;
-                        int10 = (int)Math.Round((double)this.MetaTab.Width / 2.0);
+                        x = (int)Math.Round((double)this.MetaTab.Width / 2.0);
                         Control arg_436_0 = textBox;
                         size = new Size(75, 20);
                         arg_436_0.Size = size;
                         Control arg_44A_0 = textBox;
-                        location = new Point(int10, heightSoFar);
+                        location = new Point(x, num6);
                         arg_44A_0.Location = location;
                         textBox.TextChanged += new EventHandler(this.somethingChanged);
                         groupBox.Controls.Add(label2);
                         groupBox.Controls.Add(textBox);
                         textBox.BringToFront();
-                        heightSoFar += 20;
-                        int10 = 10;
+                        num6 += 20;
+                        x = 10;
                         num2 += 2;
                         goto IL_BE9;
                     }
 
                     Control arg_C12_0 = groupBox;
-                    size = new Size(this.MetaTab.Width - 24, 20);
+                    size = new Size(this.MetaTab.Width - 24, num6 + 5);
                     arg_C12_0.Size = size;
+                    num += groupBox.Height;
                     this.MetaTab.Controls.Add(groupBox);
                 }
 
